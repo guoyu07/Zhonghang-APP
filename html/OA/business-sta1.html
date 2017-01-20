@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>OA-业务统计</title>
+		<link rel="stylesheet" type="text/css" href="../../css/mui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/app_common.css"/>
+		<style>
+			.add_name{
+				width: 100%;height: 1.875rem;background: white;
+				margin-top: 0.468rem;padding-left: 1.093rem;
+				padding-right: 1.093rem;
+				font-size: 0.437rem;
+			}
+			.add_l{color: #323232;line-height: 1.875rem;vertical-align: middle;}
+			.add_span2{float: right;margin-top: 0.562rem;}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-pull-left mui-disabled" onclick="api.closeWin();"><img src="../../image/spot-sup/back.png" alt="" /></a>
+		    <h1 class="mui-title">业务统计</h1>
+		</header>
+		<div class="mui-content">
+		    
+		    <a id="invetory-query1.html" onclick="openHtml('invetory-query1.html')">
+		    	<div class="add_name">
+		    		<label for="" class="add_l">库存查询</label><span class="mui-icon mui-icon-arrowright add_span2"></span>
+		    	</div>
+		    </a>
+		    <a id="accont-query1.html" onclick="openHtml('accont-query1.html')">
+		    	<div class="add_name">
+		    		<label for="" class="add_l">应收账款统计</label><span class="mui-icon mui-icon-arrowright add_span2"></span>
+		    	</div>
+		    </a>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../script/api.js"></script>
+	<script src="../../script/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../script/common.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		function openHtml(htmlurl){
+			
+				api.openWin({
+		            name: 'add',
+		            url: htmlurl
+           		});
+			}
+	</script>
+</html>

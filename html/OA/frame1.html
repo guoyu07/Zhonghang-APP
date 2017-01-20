@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>OA-首页</title>
+		<link rel="stylesheet" type="text/css" href="../../css/mui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/app_common.css"/>
+		<style>
+			.oa_ld{width: 11.718rem;height: 4.687rem;padding: 1.093rem 1.75rem 1.25rem 1.75rem;font-size: 12px;border-bottom: 0.031rem solid #E6E6E6;}
+			.oa_ldr{width: 2.343rem;height: auto;float: left;}
+			.oa_ldr img{max-width: 100%;}
+			.oa_ldr label{color: #646464;width: auto;margin-left: 0.343rem;}
+			
+			.oa_bd{width: 11.718rem;height: 3.75rem;padding: 0.781rem 0.937rem 0.625rem 0.937rem;font-size: 0.312rem;border-bottom: 0.031rem solid #E6E6E6;}
+			.oa_bdr{width: 1.6rem;height: 2.109rem;float: left;margin-left: 0.875rem;text-align: center;}
+			.oa_bdr img{max-width: 100%;}
+			.oa_bdr label{color: #646464;width:0.468rem;}
+		</style>
+	</head>
+	<body>
+		<div class="mui-content" id="home" id="main">
+		    <div id="slider" class="mui-slider" >
+		      <div class="mui-slider-group mui-slider-loop">
+		        <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+		        <div class="mui-slider-item mui-slider-item-duplicate">
+		          <a href="#">
+		            <img src="../../image/shop-index/banner3.png">
+		          </a>
+		        </div>
+		        <!-- 第一张 -->
+		        <div class="mui-slider-item">
+		          <a href="#">
+		            <img src="../../image/shop-index/banner2.png">
+		          </a>
+		        </div>
+		        <!-- 第二张 -->
+		        <div class="mui-slider-item">
+		          <a href="#">
+		            <img src="../../image/shop-index/banner3.png">
+		          </a>
+		        </div>
+		        <!-- 第三张 -->
+		        <div class="mui-slider-item">
+		          <a href="#">
+		            <img src="../../image/shop-index/banner3.png">
+		          </a>
+		        </div>
+		        <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+		        <div class="mui-slider-item mui-slider-item-duplicate">
+		          <a href="#">
+		            <img src="../../image/shop-index/banner2.png">
+		          </a>
+		        </div>
+		      </div>
+		      <div class="mui-slider-indicator">
+		        <div class="mui-indicator mui-active"></div>
+		        <div class="mui-indicator"></div>
+		        <div class="mui-indicator"></div>
+		      </div>
+		    </div>
+		    
+		    <div class="oa_ld div-link">
+		    	<div class="oa_ldr"><a id="approval.html" onclick="openFrame('approval.html')"><img src="../../image/01-OA-index/yidongshengpi.png"/></a>
+		    		<label for="">移动审批</label>
+		    	</div>
+		    	<div class="oa_ldr" style="margin-left: 3.531rem;" onclick="openFrame('Email-manage.html')"><a id="Email-manage.html"><img src="../../image/01-OA-index/youjianguanli.png"/></a>
+		    		<label for="">邮件管理</label>
+		    	</div>
+		    </div>
+		    
+		    <div class="oa_bd div-link">
+		    	<div class="oa_bdr" style="margin-left: 0.468rem ;" onclick="openFrame('business-sta1.html')"><a id="business-sta1.html"><img src="../../image/01-OA-index/yewutongji.png"/></a>
+		    		<label for="">业务统计</label>
+		    	</div>
+		    	<div class="oa_bdr" onclick="openFrame('mess-push1.html')"><a id="mess-push1.html"><img src="../../image/01-OA-index/xiaoxituisong.png"/></a>
+		    		<label for="">我的消息</label>
+		    	</div>
+		    	<div class="oa_bdr" onclick="openFrame('schedule1.html')"><a id="schedule1.html"><img src="../../image/01-OA-index/richenganpai.png"/></a>
+		    		<label for="">日程安排</label>
+		    	</div>
+		    	<div class="oa_bdr" onclick="openFrame('online-complaint.html')"><a id="online-complaint.html"><img src="../../image/01-OA-index/zaixianshensu.png"/></a>
+		    		<label for="">在线申诉</label>
+		    	</div>
+		    </div>
+		    <div class="oa_bd div-link">
+		    	<div class="oa_bdr" style="margin-left: 0.468rem ;" onclick="openFrame('geolocation1.html')"><a id="geolocation1.html"><img src="../../image/01-OA-index/wozaixianchan.png"/></a>
+		    		<label for="">我在现场</label>
+		    	</div>
+		    	<div class="oa_bdr" onclick="phoneCall()"><a id="contacts.html"><img src="../../image/01-OA-index/tongxunbu.png"/></a>
+		    		<label for="">通讯簿</label>
+		    	</div>
+		    	<div class="oa_bdr"><img src="../../image/01-OA-index/tianjiayingyong.png"/>
+		    		<label for="">添加应用</label>
+		    	</div>
+		    </div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../script/api.js"></script>
+	<script src="../../script/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../script/common.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var gallery = mui(".mui-slider");
+		gallery.slider({
+			interval: 1500
+		});
+		
+		function openFrame(htmlurl){
+		
+			api.openWin({
+	            name: 'main',
+	            url: htmlurl
+       		});
+		}
+		
+		apiready = function () {
+	        $api.fixStatusBar( $api.dom('header') );
+	        api.setStatusBarStyle({
+	            style: 'dark',
+	            color: '#2da5ff'
+	        });
+	        
+	         api.setRefreshHeaderInfo({
+                visible:true,
+                bgColor:'#fff',
+                textColor:'#ccc',
+                textDown:'下拉刷新',
+                textUp:'松开刷新',
+                showTime:true
+            },function(ret,err){
+                api.refreshHeaderLoadDone();
+            });
+            
+	    }
+		function phoneCall()
+		{
+			var contacts = api.require('contacts');
+			contacts.select(function(ret, err) {
+			    if (ret) {
+			    
+			    	var number ;
+			    	
+			    	if(ret.phones)
+			    	{
+			    		number=ret.phones[0];
+				       	api.call({
+				       		type: 'tel_prompt',
+		                       number:number
+	                       });
+			    	}
+			    	
+			    } else {
+			        //alert(JSON.stringify(err));
+			    }
+			});
+		}
+		
+		
+			
+	</script>
+</html>

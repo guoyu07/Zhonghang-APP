@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>消息中心</title>
+		<link rel="stylesheet" type="text/css" href="../css/mui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/app_common.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/app/message-core1.css"/>
+		<style>
+			.mui-table-view{margin-top: 0.312rem;}
+			.mui-table-view-cell a{color: white;font-size: 16px;}
+			.mui-disabled{overflow-y: initial;}
+			.mui-table-view-cell{padding: 0 0;}
+		</style>
+	</head>
+	<body>
+		<div class="mui-content">
+		    <ul id="OA_task_1" class="mui-table-view">
+				<li class="mui-table-view-cell" id="../SHOP/message1.html" onclick="clicked(this.id);">
+					<div class="mui-slider-right mui-disabled" id="del-1">
+						<a class="mui-btn mui-btn-red">删除</a>
+					</div>
+					<div class="mui-slider-handle">
+						<div class="mes_core">
+				    		<div class="p_hd">中航工业副总经理李玉海考察驻亚非三国海外机构</div>
+					    	<div class="p_zz">
+					    		<p>
+					    			11月5-15日，中航工业党组成员、副总经理李玉海带队，中航工
+							业特级专务、国际部部长刘林、中航国际执行副总裁刘军等组成的检
+							查团，对中航...
+					    		</p>
+					    	</div>
+				    	</div>
+					</div>
+				</li>
+				<li class="mui-table-view-cell" id="../SHOP/message1.html" onclick="clicked(this.id);">
+					<div class="mui-slider-right mui-disabled" id="del-2">
+						<a class="mui-btn mui-btn-red">删除</a>
+					</div>
+					<div class="mui-slider-handle">
+						<div class="mes_core">
+				    		<div class="p_hd">中航工业副总经理李玉海考察驻亚非三国海外机构</div>
+					    	<div class="p_zz">
+					    		<p>
+					    			11月5-15日，中航工业党组成员、副总经理李玉海带队，中航工
+							业特级专务、国际部部长刘林、中航国际执行副总裁刘军等组成的检
+							查团，对中航...
+					    		</p>
+					    	</div>
+				    	</div>
+					</div>
+				</li>
+				<li class="mui-table-view-cell" id="../SHOP/message1.html" onclick="clicked(this.id);">
+					<div class="mui-slider-right mui-disabled" id="del-3">
+						<a class="mui-btn mui-btn-red">删除</a>
+					</div>
+					<div class="mui-slider-handle">
+						<div class="mes_core">
+				    		<div class="p_hd">中航工业副总经理李玉海考察驻亚非三国海外机构</div>
+					    	<div class="p_zz">
+					    		<p>
+					    			11月5-15日，中航工业党组成员、副总经理李玉海带队，中航工
+							业特级专务、国际部部长刘林、中航国际执行副总裁刘军等组成的检
+							查团，对中航...
+					    		</p>
+					    	</div>
+				    	</div>
+					</div>
+				</li>
+				<li class="mui-table-view-cell" id="../SHOP/message1.html" onclick="clicked(this.id);">
+					<div class="mui-slider-right mui-disabled" id="del-4">
+						<a class="mui-btn mui-btn-red">删除</a>
+					</div>
+					<div class="mui-slider-handle">
+						<div class="mes_core">
+				    		<div class="p_hd">中航工业副总经理李玉海考察驻亚非三国海外机构</div>
+					    	<div class="p_zz">
+					    		<p>
+					    			11月5-15日，中航工业党组成员、副总经理李玉海带队，中航工
+							业特级专务、国际部部长刘林、中航国际执行副总裁刘军等组成的检
+							查团，对中航...
+					    		</p>
+					    	</div>
+				    	</div>
+					</div>
+				</li>
+				<li class="mui-table-view-cell" id="../SHOP/message1.html" onclick="clicked(this.id);">
+					<div class="mui-slider-right mui-disabled" id="del-5">
+						<a class="mui-btn mui-btn-red">删除</a>
+					</div>
+					<div class="mui-slider-handle">
+						<div class="mes_core">
+				    		<div class="p_hd">中航工业副总经理李玉海考察驻亚非三国海外机构</div>
+					    	<div class="p_zz">
+					    		<p>
+					    			11月5-15日，中航工业党组成员、副总经理李玉海带队，中航工
+							业特级专务、国际部部长刘林、中航国际执行副总裁刘军等组成的检
+							查团，对中航...
+					    		</p>
+					    	</div>
+				    	</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		
+		<script src="../js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init();
+			(function($){
+				$('#OA_task_1').on('tap', '.mui-btn', function(event) {
+					var elem = this;
+					var li = elem.parentNode.parentNode;
+					mui.confirm('确认删除该条记录？', '删除', btnArray, function(e) {
+						if (e.index == 0) {
+							li.parentNode.removeChild(li);
+						} else {
+							setTimeout(function() {
+								$.swipeoutClose(li);
+							}, 0);
+						}
+					});
+				});
+				var btnArray = ['确认', '取消'];
+			})(mui);
+		</script>
+	</body>
+</html>

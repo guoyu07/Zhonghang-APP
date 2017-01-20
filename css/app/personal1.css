@@ -1,0 +1,71 @@
+/*上方头像及信息设置*/
+.headImg{
+	width: 100%;height: 7.5rem;
+	background-image: url('../../image/personal-center/personal-center.png');
+	background-size: 100%;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+.touxiang{
+	width: 11.718rem;height: 2.343rem;position: absolute;top: 2.312rem;
+}
+#touxiang_img{
+	width:2.343rem ;height: 2.343rem;
+	-webkit-border-radius: 50%;background: white;
+	margin-left: 1.093rem;margin-right: 0.781rem;
+	display: inline-block;
+	float: left;
+}
+#touxiang_img img{width: 2.343rem;height: 2.343rem;}
+#touxiang_sm{
+	width: 7.5rem;
+	height: 2.343rem;
+	float: left;
+}
+#touxiang_sm label{
+	color: white;
+}
+#touxiang_gs{
+	font-size: 14px;display: inline-block;margin-top: 0.39rem;float: left;
+}
+#touxiang_gy{font-size: 0.375rem;display: inline-block;margin-top: 0.39rem;float: left;}
+#touxiang_yue{color: #f50000;font-size: 16px;margin-left: 1.2rem;display: inline-block;margin-top: 0.39rem;}
+/*按钮及分隔符*/
+.per_mes{width: 11.718rem;height: 1.562rem;background: black;opacity: 0.05;position: absolute;top:5.937rem ;overflow: hidden;}
+.per_btn{
+	color: white;font-size: 14px;
+	background-color: rgba(1,1,1,0);
+	border: none;
+	width: 5.859rem;line-height: 1.218rem;
+	text-align: center;
+	display: inline-block;float: left;
+}
+#change_password{
+	position: absolute;top: 5.937rem;
+}
+#message_seo{position: absolute;top: 5.937rem;right: 0;}
+/*.per_btn:hover{background: darkgray;opacity: 0.17;}*/
+#fenge{width: 0;height: 0.625rem;border: 1px solid white;-webkit-border-radius: 0.015rem;position: absolute;top: 6.406rem;right: 5.843rem;}
+/*信息表单*/
+.per_mes_form{
+	background: #FAFAFA;
+	width: 11.718rem;height: auto;
+	padding-top: 0.468rem;padding-bottom: 0.72rem;
+}
+.per_mes_att{
+	color: #323232;font-size: 0.375rem;
+	display: inline-block;
+	width: 2.7rem;line-height: 1.25rem;
+	text-align: left;
+	margin-left: 1.25rem;
+}
+.per_mes_pal{
+	width: 7.5rem;
+	line-height: 1.25rem;
+	font-size: 0.375rem;
+	text-align: left;
+}
+
+/*注销登录键*/
+.per_zx{margin: 0 auto;width: 9.531rem;height: auto;margin-top: 0.468rem;border: 1 solid red;}
+.per_zhuxiao{color: #969696;border-radius: 0;display: inline-block;width: 9.531rem;line-height: 1.25rem;background: #dcdcdc;font-size: 14px;text-align: center;}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>OA-添加行程</title>
+		<link rel="stylesheet" type="text/css" href="../../css/mui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/app_common.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/OA/approval-03-add.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/OA/mui.picker.all.css"/>
+		<style>
+			.text-hd{width: 100%;line-height: 1.25rem;background: white;padding-left: 1.093rem;padding-right: 1.093rem;margin-top: 0.312rem;padding-bottom: 0.312rem;font-size: 0.375rem;}
+			.text-h1{color: #323232;}
+			.text-h2{color: #646464;}
+			#text-htime{margin-left: 0.156rem;}
+			.text-h3{float: right;}
+			.text-hd textarea{border: none;font-size: 0.437rem;height: auto;}
+			
+			.btn-y{width: 100%;height: 1.25rem;margin: 0 auto;margin-top: 3rem;}
+			.btn-yes{width: 100%;height: 1.25rem;background: #2DA5FF;border: 0;text-align: center;color: white;border-radius:0}
+			
+			.mui-content{overflow-x: hidden;}
+			.add_span2{width: 0.437rem;height:0.473rem;margin-top: 0.468rem;}
+			.mui-dtpicker-header button{border: none;color: #2DA5FF;font-size: 0.5rem;background: transparent;}
+			.mui-dtpicker-header{background: white;}
+			.mui-dtpicker-body{height: 4rem;}
+			.add_start,.add_stop{border: none;}
+			.mui-btn-block{padding: 0 1.093rem;overflow: hidden;}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-pull-left mui-disabled" onclick="api.closeWin();"><img src="../../image/spot-sup/back.png" alt="" /></a>
+		    <h1 class="mui-title">添加行程</h1>
+		</header>
+		<div class="mui-content">
+			<button class="add_start btn mui-btn mui-btn-block" id='pickDateBtn1'> 
+		    	<!--开始时间的设置-->
+		    		<label for="" class="add_l" style="float: left;">时间：</label><label for="" id='result' class="add_r2" style="float: left;margin-top: 10px;">2016-10-11 09:30</label><img src="../../image/right.png" class="add_span2 mui-pull-right" alt="" />
+		    	
+		    </button>
+		    <!--<div class="text-hd">
+		    	<label for="" class="text-h1">：</label><span class="mui-icon mui-icon-arrowright mui-pull-right" style="margin-top: 11px;float: right;font-size: 0.6rem;"></span><label for="" class="text-h3">2016-10-10 09:30</label>
+		    </div>-->
+		    
+		    <div class="text-hd">
+		    	<label for="" class="text-h1">行程内容：</label><textarea placeholder="在此输入你的行程内容"/></textarea>
+		    </div>
+		    
+		    <div class="btn-y">
+		    	<button class="btn-yes" id="btn">确认</button>
+		    </div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../script/api.js"></script>
+	<script src="../../script/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../script/common.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../script/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		(function($) {
+			$.init();
+			var result = $('#result')[0];
+			var btns = $('.btn');
+			btns.each(function(i, btn) {
+				btn.addEventListener('tap', function() {
+					var optionsJson = this.getAttribute('data-options') || '{}';
+					var options = JSON.parse(optionsJson);
+					var id = this.getAttribute('id');
+					/*
+					 * 首次显示时实例化组件
+					 * 示例为了简洁，将 options 放在了按钮的 dom 上
+					 * 也可以直接通过代码声明 optinos 用于实例化 DtPicker
+					 */
+					var picker = new $.DtPicker(options);
+					picker.show(function(rs) {
+						/*
+						 * rs.value 拼合后的 value
+						 * rs.text 拼合后的 text
+						 * rs.y 年，可以通过 rs.y.vaue 和 rs.y.text 获取值和文本
+						 * rs.m 月，用法同年
+						 * rs.d 日，用法同年
+						 * rs.h 时，用法同年
+						 * rs.i 分（minutes 的第二个字母），用法同年
+						 */
+						result.innerText =  rs.text;
+						/* 
+						 * 返回 false 可以阻止选择框的关闭
+						 * return false;
+						 */
+						/*
+						 * 释放组件资源，释放后将将不能再操作组件
+						 * 通常情况下，不需要示放组件，new DtPicker(options) 后，可以一直使用。
+						 * 当前示例，因为内容较多，如不进行资原释放，在某些设备上会较慢。
+						 * 所以每次用完便立即调用 dispose 进行释放，下次用时再创建新实例。
+						 */
+						picker.dispose();
+					});
+				}, false);
+			});
+		})(mui);
+	</script>
+</html>

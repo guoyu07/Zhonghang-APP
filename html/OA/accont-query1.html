@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>OA-账款查询</title>
+		<link rel="stylesheet" type="text/css" href="../../css/mui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/app_common.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/app/supermarket1.css"/>
+		<style>
+			.mui-disabled img{width: 0.625rem;line-height: 0.625rem;margin-top: 15px;}
+			.invetory-bdl{color: #323232;font-size: 0.375rem;}
+			.inv_r{float: right;}
+			.huowu_add{width: 9.531rem;border-top: 0.031rem solid #969696;margin-top: 0.312rem;color: #969696;}
+			.add-l{margin-left: 0.468rem;}
+			
+			/*展开和收缩*/
+			.mui-table-view-cell.mui-active{background: transparent;}
+			.mui-table-view{width: 100%;height: auto;margin-top: 0.468rem;padding: 0.312rem 0.625rem;background: white;}
+			.mui-navigate-right:after, .mui-push-right:after{top: 0.703rem;right: 1px;}
+			.mui-table-view-cell.mui-collapse .mui-collapse-content{margin: 1px -15px -11px;}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-pull-left mui-disabled" onclick="api.closeWin();"><img src="../../image/spot-sup/back.png" alt="" /></a>
+		    <h1 class="mui-title">账款查询</h1>
+		    <a href="" class="mui-pull-right  mui-disabled" id="text-more"><img src="../../image/spot-sup/search.png"/></a>
+		</header>
+		<div class="mui-content">
+			<div class="mui-table-view"> 
+		        <li class="mui-table-view-cell mui-collapse">
+		            <a class="mui-navigate-right huowu_name" href="#">
+		            	<label for="" class="huowu_name">北京南北天地科技股份有限公司</label><br />
+						<label for="" class="invetory-bdl">销售合同号</label><label for="" class="invetory-bdl inv_r">SADASDADCASF/001</label><br />
+						<label for="" class="invetory-bdl">应收账款</label><span>¥</span><label for="" class="invetory-bdl inv_r">20000.00</label>
+		            </a>
+		            <div class="mui-collapse-content">
+		            	<div class="coll-top">
+			            	<div class="huowu_add">
+								<label for="">发货批次</label><label for="" class="add-l">FPSSAFASF1、FPSSAFASF12</label><br />
+								<label for="">预计收款</label><span class="add-l">¥</span><label for="">88888.88</label><br />
+								<label for="">开票日期</label><label for="" class="add-l">2016-11-11</label><label for="">09:30</label>
+							</div>
+						</div>	
+		            </div>
+		        </li>
+	   	 	</div>
+	   	 	<div class="mui-table-view"> 
+		        <li class="mui-table-view-cell mui-collapse">
+		            <a class="mui-navigate-right huowu_name" href="#">
+		            	<label for="" class="huowu_name">北京南北天地科技股份有限公司</label><br />
+						<label for="" class="invetory-bdl">销售合同号</label><label for="" class="invetory-bdl inv_r">SADASDADCASF/001</label><br />
+						<label for="" class="invetory-bdl">应收账款</label><span>¥</span><label for="" class="invetory-bdl inv_r">20000.00</label>
+		            </a>
+		            <div class="mui-collapse-content">
+		            	<div class="coll-top">
+			            	<div class="huowu_add">
+								<label for="">发货批次</label><label for="" class="add-l">FPSSAFASF1、FPSSAFASF12</label><br />
+								<label for="">预计收款</label><span class="add-l">¥</span><label for="">88888.88</label><br />
+								<label for="">开票日期</label><label for="" class="add-l">2016-11-11</label><label for="">09:30</label>
+							</div>
+						</div>	
+		            </div>
+		        </li>
+	   	 	</div>
+	   	 	<div class="mui-table-view"> 
+		        <li class="mui-table-view-cell mui-collapse">
+		            <a class="mui-navigate-right huowu_name" href="#">
+		            	<label for="" class="huowu_name">北京南北天地科技股份有限公司</label><br />
+						<label for="" class="invetory-bdl">销售合同号</label><label for="" class="invetory-bdl inv_r">SADASDADCASF/001</label><br />
+						<label for="" class="invetory-bdl">应收账款</label><span>¥</span><label for="" class="invetory-bdl inv_r">20000.00</label>
+		            </a>
+		            <div class="mui-collapse-content">
+		            	<div class="coll-top">
+			            	<div class="huowu_add">
+								<label for="">发货批次</label><label for="" class="add-l">FPSSAFASF1、FPSSAFASF12</label><br />
+								<label for="">预计收款</label><span class="add-l">¥</span><label for="">88888.88</label><br />
+								<label for="">开票日期</label><label for="" class="add-l">2016-11-11</label><label for="">09:30</label>
+							</div>
+						</div>	
+		            </div>
+		        </li>
+	   	 	</div>
+	   	 	<div class="mui-table-view"> 
+		        <li class="mui-table-view-cell mui-collapse">
+		            <a class="mui-navigate-right huowu_name" href="#">
+		            	<label for="" class="huowu_name">北京南北天地科技股份有限公司</label><br />
+						<label for="" class="invetory-bdl">销售合同号</label><label for="" class="invetory-bdl inv_r">SADASDADCASF/001</label><br />
+						<label for="" class="invetory-bdl">应收账款</label><span>¥</span><label for="" class="invetory-bdl inv_r">20000.00</label>
+		            </a>
+		            <div class="mui-collapse-content">
+		            	<div class="coll-top">
+			            	<div class="huowu_add">
+								<label for="">发货批次</label><label for="" class="add-l">FPSSAFASF1、FPSSAFASF12</label><br />
+								<label for="">预计收款</label><span class="add-l">¥</span><label for="">88888.88</label><br />
+								<label for="">开票日期</label><label for="" class="add-l">2016-11-11</label><label for="">09:30</label>
+							</div>
+						</div>	
+		            </div>
+		        </li>
+	   	 	</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../script/api.js"></script>
+	<script src="../../script/common.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../script/mui.min.js" type="text/javascript" charset="utf-8"></script>
+</html>

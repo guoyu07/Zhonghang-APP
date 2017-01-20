@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>全部订单</title>
+		<link rel="stylesheet" type="text/css" href="../css/mui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/app_common.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/app/supermarket1.css"/>
+		<style>
+			.mui-color{color: white;}
+			.mui-disabled img{width: 0.625rem;line-height: 0.625rem;margin-top: 11px;}
+			.mkt_form{width: 9.531rem;height: 3.906rem;border: none;margin: auto 1.093rem;}
+			.huowu_alr{color: #12d012;float: right;}
+			.huowu_none{color: #f50000;float: right;}
+			
+			/*背景处理及选项*/
+			.mine_bg{width: 100%;height: 100%;position: fixed;top: 0;right: 0;background: #000064;opacity: 0.2;z-index: 1;}
+			#mine_tanc{
+				width: 100%;height: 3.906rem;
+				position: fixed;top: 0.687rem;right: 0;
+				background: white;z-index: 2;
+				padding-top: 0.937rem;
+				overflow: hidden;
+			}
+			#mine_tanc label{display: inline-block;width: 3.78rem;text-align: center;font-size: 0.437rem;}
+			.mine_no{color: #C8C8C8;}
+			.mine_xuanz{color: #323232;margin-top: 0.234rem;}
+			
+			/*背景处理*/
+			#bg-text{display: none;}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav own-header-hidden">
+		    <a class="mui-pull-left mui-disabled" onclick="api.closeWin();"><img src="../../image/spot-sup/back.png" alt="" /></a>
+		    <h1 class="mui-title">全部订单<span class="mui-icon mui-icon-arrowdown mui-color" id="start-down"></span></h1>
+		    <a href="" class="mui-pull-right  mui-disabled" id="text-more"><img src="../image/spot-sup/search.png"/></a>
+		</header>
+		<div class="mui-content">
+			<div class="market_bd">
+				<div class="mkt_form">
+		    		<div class="huowu_name">
+		    			<label for="">带钢(磅计)Q195C 2.5*326</label><label for="" class="huowu_alr">交易完成</label>
+		    		</div>
+		    		<div class="huowu_add">
+		    			<label for="" class="odr_x">成交时间:</label><label for="" class="huowu_x">2016年3月14日 17时18分</label>
+		    		</div>
+		    		<div class="huowu_add">
+		    			<label for="" class="odr_x">订单编号:</label><label for="" class="huowu_x">AVD1603014/02</label>
+		    		</div>
+		    		<div class="huowu_add">
+		    			<label for="" class="odr_x">币种:</label><label for="" class="huowu_x">人民币</label><label for="" class="odr_x" id="jiaohuo_add">成交额：</label><label for="" class="huowu_x">2000.00</label>
+		    		</div>
+		    	</div>
+			</div>
+		    
+		    <div class="market_bd">
+				<div class="mkt_form">
+		    		<div class="huowu_name">
+		    			<label for="">带钢(磅计)Q195C 2.5*326</label><label for="" class="huowu_none">待收货</label>
+		    		</div>
+		    		<div class="huowu_add">
+		    			<label for="" class="odr_x">成交时间:</label><label for="" class="huowu_x">2016年3月14日 17时18分</label>
+		    		</div>
+		    		<div class="huowu_add">
+		    			<label for="" class="odr_x">订单编号:</label><label for="" class="huowu_x">AVD1603014/02</label>
+		    		</div>
+		    		<div class="huowu_add">
+		    			<label for="" class="odr_x">币种:</label><label for="" class="huowu_x">人民币</label><label for="" class="odr_x" id="jiaohuo_add">成交额：</label><label for="" class="huowu_x">2000.00</label>
+		    		</div>
+		    	</div>
+			</div>
+			
+			<div class="market_bd">
+				<div class="mkt_form">
+		    		<div class="huowu_name">
+		    			<label for="">带钢(磅计)Q195C 2.5*326</label><label for="" class="huowu_none">待付款</label>
+		    		</div>
+		    		<div class="huowu_add">
+		    			<label for="" class="odr_x">成交时间:</label><label for="" class="huowu_x">2016年3月14日 17时18分</label>
+		    		</div>
+		    		<div class="huowu_add">
+		    			<label for="" class="odr_x">订单编号:</label><label for="" class="huowu_x">AVD1603014/02</label>
+		    		</div>
+		    		<div class="huowu_add">
+		    			<label for="" class="odr_x">币种:</label><label for="" class="huowu_x">人民币</label><label for="" class="odr_x" id="jiaohuo_add">成交额：</label><label for="" class="huowu_x">2000.00</label>
+		    		</div>
+		    	</div>
+			</div>
+			
+			<div class="market_bd">
+				<div class="mkt_form">
+		    		<div class="huowu_name">
+		    			<label for="">带钢(磅计)Q195C 2.5*326</label><label for="" class="huowu_none">待发货</label>
+		    		</div>
+		    		<div class="huowu_add">
+		    			<label for="" class="odr_x">成交时间:</label><label for="" class="huowu_x">2016年3月14日 17时18分</label>
+		    		</div>
+		    		<div class="huowu_add">
+		    			<label for="" class="odr_x">订单编号:</label><label for="" class="huowu_x">AVD1603014/02</label>
+		    		</div>
+		    		<div class="huowu_add">
+		    			<label for="" class="odr_x">币种:</label><label for="" class="huowu_x">人民币</label><label for="" class="odr_x" id="jiaohuo_add">成交额：</label><label for="" class="huowu_x">2000.00</label>
+		    		</div>
+		    	</div>
+			</div>
+			
+			<!--背景遮罩及选项-->
+			<!--遮罩效果-->
+			<div id="bg-text">
+				<div class="mine_bg" id="close-bg">
+				</div>
+				<div id="mine_tanc">
+					<label for="" class="mine_xuanz">全部订单</label>|<label for="" class="mine_no">待付款</label>|<label for="" class="mine_no">待发货</label><br /><br />
+					<label for="" class="mine_no">待收货</label>|<label for="" class="mine_no">交易完成</label>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/common.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		mui.init({
+			swipeBack:true
+		});
+		
+		var btn = document.getElementById("start-down");
+		var bg = document.getElementById("bg-text");
+		var clo = document.getElementById("close-bg");
+		btn.addEventListener('tap',function(){
+			bg.style.display = 'block';
+		});
+		clo.addEventListener('tap',function(){
+			bg.style.display = 'none';
+		});
+	</script>
+</html>

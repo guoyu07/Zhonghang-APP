@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>资金查看</title>
+		<link rel="stylesheet" type="text/css" href="../css/mui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/app_common.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/app/order-track.css"/>
+		
+		<style>
+		.mui-disabled img{width: 0.625rem;line-height: 0.625rem;margin-top: 13px;}
+			.mui-card{width: 100%;margin-left: 0;margin-top: 0.312rem;border: none;box-shadow: none;font-size: 0.375rem;}
+			.mui-table-view-cell .odr_x{color: #969696;}
+			.mon_hd{color: #323232;}
+			.mon_yue{color: #2da5ff;}
+			.mui-table-view-chevron .mui-table-view-cell>a:not(.mui-btn){background: transparent;}
+			.mui-table-view-cell.mui-collapse .mui-table-view .mui-table-view-cell:after{right: 0.781rem;}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-pull-left mui-disabled" onclick="api.closeWin();"><img src="../../image/spot-sup/back.png" alt="" /></a>
+		    <h1 class="mui-title">资金查看<span class="mui-icon mui-icon-arrowdown mui-color"></span></h1>
+		    <a href="" class="mui-pull-right  mui-disabled" id="text-more"><img src="../image/spot-sup/search.png"/></a>
+		</header>
+		<div class="mui-content">
+		    <div class="mui-card">
+				<ul class="mui-table-view mui-table-view-chevron">
+					<li class="mui-table-view-cell mui-collapse"><a class="mui-navigate-right" href="#"><label for="" class="mon_hd">AVD160317/01</label><label class="mon_hd" style="margin-left:1.562rem ;">剩余金额：</label><label class="mon_yue">33333.00</label></a>
+						<ul class="mui-table-view mui-table-view-chevron">
+							<li class="mui-table-view-cell">
+					    		<div class="odr_time">
+					    			<label for="" class="odr_x">下单时间:</label><label for="" class="huowu_x">2016年3月14日 17时18分</label>
+					    		</div>
+					    		<div class="odr_num">
+					    			<label for="" class="odr_x">订单编号:</label><label for="" class="huowu_x">AVD1603014/02</label>
+					    		</div>
+					    		<div class="odr_bz">
+					    			<label for="" class="odr_x">币种:</label><label for="" class="huowu_x">人民币</label><label for="" class="odr_x" id="jiaohuo_add">交易额：</label><label for="" class="huowu_x">2000.00</label>
+					    		</div>
+							</li>
+							<li class="mui-table-view-cell">
+					    		<div class="odr_time">
+					    			<label for="" class="odr_x">下单时间:</label><label for="" class="huowu_x">2016年3月14日 17时18分</label>
+					    		</div>
+					    		<div class="odr_num">
+					    			<label for="" class="odr_x">订单编号:</label><label for="" class="huowu_x">AVD1603014/02</label>
+					    		</div>
+					    		<div class="odr_bz">
+					    			<label for="" class="odr_x">币种:</label><label for="" class="huowu_x">人民币</label><label for="" class="odr_x" id="jiaohuo_add">交易额：</label><label for="" class="huowu_x">2000.00</label>
+					    		</div>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			
+		 <div class="mui-card">
+				<ul class="mui-table-view mui-table-view-chevron">
+					<li class="mui-table-view-cell mui-collapse"><a class="mui-navigate-right" href="#"><label for="" class="mon_hd">AVD160317/01</label><label class="mon_hd" style="margin-left:1.562rem ;">剩余金额：</label><label class="mon_yue">33333.00</label></a>
+						<ul class="mui-table-view mui-table-view-chevron">
+							<li class="mui-table-view-cell">
+					    		<div class="odr_time">
+					    			<label for="" class="odr_x">下单时间:</label><label for="" class="huowu_x">2016年3月14日 17时18分</label>
+					    		</div>
+					    		<div class="odr_num">
+					    			<label for="" class="odr_x">订单编号:</label><label for="" class="huowu_x">AVD1603014/02</label>
+					    		</div>
+					    		<div class="odr_bz">
+					    			<label for="" class="odr_x">币种:</label><label for="" class="huowu_x">人民币</label><label for="" class="odr_x" id="jiaohuo_add">交易额：</label><label for="" class="huowu_x">2000.00</label>
+					    		</div>
+							</li>
+							<li class="mui-table-view-cell">
+					    		<div class="odr_time">
+					    			<label for="" class="odr_x">下单时间:</label><label for="" class="huowu_x">2016年3月14日 17时18分</label>
+					    		</div>
+					    		<div class="odr_num">
+					    			<label for="" class="odr_x">订单编号:</label><label for="" class="huowu_x">AVD1603014/02</label>
+					    		</div>
+					    		<div class="odr_bz">
+					    			<label for="" class="odr_x">币种:</label><label for="" class="huowu_x">人民币</label><label for="" class="odr_x" id="jiaohuo_add">交易额：</label><label for="" class="huowu_x">2000.00</label>
+					    		</div>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			
+			 <div class="mui-card">
+				<ul class="mui-table-view mui-table-view-chevron">
+					<li class="mui-table-view-cell mui-collapse"><a class="mui-navigate-right" href="#"><label for="" class="mon_hd">AVD160317/01</label><label class="mon_hd" style="margin-left:1.562rem ;">剩余金额：</label><label class="mon_yue">33333.00</label></a>
+						<ul class="mui-table-view mui-table-view-chevron">
+							<li class="mui-table-view-cell">
+					    		<div class="odr_time">
+					    			<label for="" class="odr_x">下单时间:</label><label for="" class="huowu_x">2016年3月14日 17时18分</label>
+					    		</div>
+					    		<div class="odr_num">
+					    			<label for="" class="odr_x">订单编号:</label><label for="" class="huowu_x">AVD1603014/02</label>
+					    		</div>
+					    		<div class="odr_bz">
+					    			<label for="" class="odr_x">币种:</label><label for="" class="huowu_x">人民币</label><label for="" class="odr_x" id="jiaohuo_add">交易额：</label><label for="" class="huowu_x">2000.00</label>
+					    		</div>
+							</li>
+							<li class="mui-table-view-cell">
+					    		<div class="odr_time">
+					    			<label for="" class="odr_x">下单时间:</label><label for="" class="huowu_x">2016年3月14日 17时18分</label>
+					    		</div>
+					    		<div class="odr_num">
+					    			<label for="" class="odr_x">订单编号:</label><label for="" class="huowu_x">AVD1603014/02</label>
+					    		</div>
+					    		<div class="odr_bz">
+					    			<label for="" class="odr_x">币种:</label><label for="" class="huowu_x">人民币</label><label for="" class="odr_x" id="jiaohuo_add">交易额：</label><label for="" class="huowu_x">2000.00</label>
+					    		</div>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+				
+				
+			</div>
+		</div>
+	</body>
+	<script src="../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/common.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		mui.init({
+			swipeBack:true
+		});
+	</script>
+</html>

@@ -1,0 +1,31 @@
+.mui-table-view{
+	background: rgba(1,1,1,0);
+	font-size: 12px;
+	margin: 0 1.093rem;
+	/*border: 1px solid rgba(1,1,1,0);*/
+}
+.mui-table-view:after{
+	height: 0;
+	content: '';
+    -webkit-transform: scaleY(.0);
+            transform: scaleY(.0);
+
+    background-color: #c8c7cc;
+}
+.mui-table-view:before{
+	height: 0;
+	content: '';
+    -webkit-transform: scaleY(.0);
+            transform: scaleY(.0);
+
+    background-color: #c8c7cc;
+}
+.mui-table-view-cell1{width: 100%;height: 0.937rem;border: none;margin-top: 0.312rem;margin-bottom: 0.312rem;}
+.mui-table-view label{line-height: 0.937rem;color: #323232;}
+.lbl{line-height: 0.937rem;float: left;}
+.mui-table-view input{font-size: 12px;width: 7.031rem;height: 0.937rem;border: 0;}
+.inpt{width: 7.031rem;height: 0.937rem;float: right;}
+
+
+.sub_btn{width: 9.531rem;height: 1.25rem;margin: 0 auto;margin-top: 1.562rem;}
+.sub_xiugai{width: 100%;height: 100%;background: #2DA5FF;color: white;font-size: 14px;text-align: center;}

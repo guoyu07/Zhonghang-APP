@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>OA-个人中心</title>
+		<link rel="stylesheet" type="text/css" href="../../css/mui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/app_common.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/app/personal1.css"/>
+		<style>
+			.headImg{width: 100%;height: 6.062rem;}
+			.background-img{
+				width: 100%;height: 6.062rem;
+			}
+			#touxiang_yewu{font-size: 14px;margin-left: 2.031rem;position: relative;top:0.312rem ;}
+			.touxiang_daka1{width: 2.187rem;height: 0.625rem;border: none;background-color: rgba(1,1,1,0);background-image: url('../../image/01-OA-per/dakashangban.png');background-size:100%;margin-left: 3.125rem;}
+			.touxiang_daka2{width: 2.187rem;height: 0.625rem;border: none;background-color: rgba(1,1,1,0);background-image: url('../../image/01-OA-per/xiabanqiantui.png');background-size:100%;margin-left: 3.125rem;}
+			#txsm_dengji{font-size: 14px;color: white;}
+			.shuoming{width: 7.3rem;height: auto;margin-top: 0.625rem;}
+			#touxiang_gy{position: relative;top: -0.3rem;}
+			/*下方表单设置*/
+			.mui-card{width: 100%;margin-left: 0;margin-top: 0.468rem;border: none;box-shadow: none;font-size: 0.375rem;padding-left: 1.093rem;padding-right: 0.781rem;}
+			.mui-table-view-cell a{display: inline-block;color: #323232;width: auto;}
+			.mui-table-view-cell a>label{line-height: 1.562rem;color: #323232;}
+			.mui-table-view-cell img{width: 0.781rem;height: 0.781rem;position: relative;top: 0.203rem;}
+		</style>
+	</head>
+	<body>
+		<div class="mui-content">
+		    <div class="headImg">
+				<div class="touxiang">
+					<div id="touxiang_img">
+						<img src="../../image/personal-center/head01.png" alt="" />
+					</div>
+					<div id="touxiang_sm">
+						<label for="" id="touxiang_gs">张鹏煜</label>
+						<label for="" id="touxiang_yewu">国际业务二部</label>
+						<div class="shuoming">
+							<label for="" id="touxiang_gy" style="font-size: 14px;">lv</label><label for="" id="txsm_dengji">2</label> <button id="daka" class="touxiang_daka1"></button>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+			<div class="mui-card">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right" id="my-wages1.html" onclick="openFrame('my-wages1.html')">
+							<img src="../../image/01-OA-per/wodegongzi.png" alt="" />
+							<label for="">我的工资</label>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="mui-card">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right" id="password-mod1.html" onclick="openFrame('password-mod1.html')">
+							<img src="../../image/01-OA-per/xiugaimima.png" alt="" />
+							<label for="">修改密码</label>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="mui-card">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right" id="comp-gift1.html" onclick="openFrame('comp-gift1.html')">
+							<img src="../../image/01-OA-per/qiyelibao.png" alt="" />
+							<label for="">企业礼包</label>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="mui-card">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right" id="help1.html" onclick="openFrame('help1.html')">
+							<img src="../../image/01-OA-per/yonghubanzhu.png" alt="" />
+							<label for="">用户帮助</label>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="mui-card">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right" id="setup1.html" onclick="openFrame('setup1.html')">
+							<img src="../../image/01-OA-per/shezhi.png" alt="" />
+							<label for="">设置</label>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../script/api.js"></script>
+	<script src="../../script/mui.min.js"></script>
+	<script src="../../script/common.js"></script>
+	<script type="text/javascript">
+	
+		function openFrame(htmlurl){
+			api.openWin({
+	            name: 'main',
+	            url: htmlurl
+       		});
+		}
+	
+		apiready = function () {
+	         api.setRefreshHeaderInfo({
+                visible:true,
+                bgColor:'#fff',
+                textColor:'#ccc',
+                textDown:'下拉刷新',
+                textUp:'松开刷新',
+                showTime:true
+            },function(ret,err){
+                    //coding...
+                    //读取数据
+                    //判断是否有更新
+                    //重新填充内容
+                    //alert('正在努力刷新……！');
+                    api.refreshHeaderLoadDone();
+            });
+    	}
+	</script>
+</html>

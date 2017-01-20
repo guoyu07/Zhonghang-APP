@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>OA-请假申请</title>
+		<link rel="stylesheet" type="text/css" href="../../css/mui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/app_common.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/OA/approval-03-add.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/OA/mui.picker.all.css"/>
+		<style>
+			.mui-content{overflow-x: hidden;}
+			.add_span2{font-size: 0.437rem;margin-top: 0.468rem;}
+			.mui-dtpicker-header button{border: none;color: #2DA5FF;font-size: 0.5rem;background: transparent;}
+			.mui-dtpicker-header{background: white;}
+			.mui-dtpicker-body{height: 4rem;}
+			.add_start,.add_stop{border: none;}
+			.mui-btn-block{padding: 0 1.093rem;overflow: hidden;}
+			.new-search{background: white;width: 4.687rem;}
+		</style>
+		
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav" id="header">
+		    <a class="mui-pull-left mui-disabled" onclick="api.closeWin();"><img src="../../image/spot-sup/back.png" alt="" /></a>
+		    <h1 class="mui-title">请假申请</h1>
+		</header>
+		<div class="mui-content">
+		    <div class="add_name">
+		    	<div class="mui-indexed-list-search mui-input-row">
+		    		<label for="" class="add_l" style="margin-left: -15px;">流程标题：</label><input type="search" class="mui-input-clear mui-indexed-list-search-input new-search" placeholder="张三的请假申请">
+		    	</div>
+		    </div>
+		    <div class="add_name" id="appr-lei">
+		    	<div>
+		    		<label for="" class="add_l">请假类型：</label><label for="" class="add_r3" id="text-lev">病假</label><span class="mui-icon mui-icon-arrowright add_span2"></span>
+		    	</div>
+		    </div>
+		    <button class="add_start btn1 mui-btn mui-btn-block">
+		    	<!--开始时间的设置-->
+		    		<label for="" class="add_l" style="float: left;">开始时间：</label><label id="pickDateBtn1" class="add_r2" style="float: left;margin-top: 10px;">2016-10-11 09:30</label><span class="mui-icon mui-icon-arrowright add_span2"></span>
+		    	
+		    </button>
+		    <button class="add_stop btn2 mui-btn mui-btn-block">
+		     	<!--结束时间的设置-->
+		     		<label for="" class="add_l" style="float: left;">结束时间：</label><label id="pickDateBtn2" class="add_r2" style="float: left;margin-top: 10px;">2016-10-11 09:30</label><span class="mui-icon mui-icon-arrowright add_span2"></span>
+		     	
+		    </button>
+		    <div class="time_g">
+		    	<label for="" class="time_ga">共</label><label for="" id="time_day">4</label><label for="" class="time_ga">天</label><label for="" id="time_hour">0</label><label for="" class="time_ga">小时</label><label for="" id="time_min">0</label><label for="" class="time_ga">分</label>
+		    </div>
+		    <div class="add_reason">
+		    	<label for="" class="add_l">请假事由：</label>
+		    	<!--<div class="row mui-input-row">
+		    		<textarea id='reason' type="text" class="mui-input-clear" placeholder="授权原因...">
+		    		
+		    		</textarea>
+		    	</div>-->
+		    	<div class="row mui-input-row">
+				<textarea id='reason' class="mui-input-clear" placeholder="授权原因..."></textarea>
+				</div>
+		    </div>
+		    <div class="add_name">
+		    	
+		    		<label for="" class="add_l">上传图片：</label>
+		    		<div class="add_spimg">
+		    			<img src="../../image/13/p1.png" style="margin-left: 0;"/><img src="../../image/13/p2.png"/><img src="../../image/13/p3.png"/><img src="../../image/13/p4.png"/><img src="../../image/13/p5.png" class="button" onclick="api.getPicture();"/>
+		    		</div>
+		    	
+		    </div>
+		    <div class="add_name" id="person-choice.html" onclick="openAppr('person-choice.html');">
+		    	<a >
+		    		<label for="" class="add_l">添加审批人：</label><label for="" class="add_r1">张三;</label><label for="">李四</label><span class="mui-icon mui-icon-plusempty add_span1"></span>
+		    		
+		    	</a>
+		    </div>
+		    <div class="add_ok">
+		    	<button>提交申请</button>
+		    </div>
+		    
+		    <div id="text-bgs">
+				<div class="text-bg">
+				<!--遮罩-->
+				</div>
+				<!--请假类型-->
+				<div class="text-bgl" id="text-bgl">
+					<div class="text-img"><label for="" id="text-btncle">取消</label><label for="" class="yes_right" id="text-ok">确定</label></div>
+					<div class="text-img btt" style="margin-top: 0.156rem;">事假</div>
+					<div class="text-img btt sel-active">病假</div>
+					<div class="text-img btt">年假</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../../script/api.js"></script>
+	<script src="../../script/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../script/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../script/common.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" charset="utf-8">
+		mui.init({
+			swipeBack:true
+		});
+		var btn = document.getElementById("text-bgs");
+		var mor = document.getElementById("appr-lei");
+		var cle = document.getElementById("text-btncle");
+		
+		mor.addEventListener('tap',function(){
+			btn.style.display = 'block';
+			var s = document.querySelectorAll('.btt');
+			var lev = document.getElementById("text-lev");
+			var btn_y = document.getElementById("text-ok");
+			mui('#text-bgl').on('tap','.btt',function(){
+				for(var j = 0; j < s.length; j++){
+					s[j].classList.remove('sel-active');
+				}
+				this.classList.add('sel-active');
+				var val = this.innerText;
+				btn_y.addEventListener('tap',function(){
+					lev.innerText = val;
+					btn.style.display = 'none';
+				});
+			});
+		});
+		cle.addEventListener('tap',function(){
+			btn.style.display = 'none';
+		});
+
+	</script>
+	<script>
+			(function($) {
+				$.init();
+				var result1 = $('#pickDateBtn1')[0];
+				var result2 = $('#pickDateBtn2')[0];
+				var btns1 = $('.btn1');
+				var btns2 = $('.btn2');
+				btns1.each(function(i, btn) {
+					btn.addEventListener('tap', function() {
+						var optionsJson = this.getAttribute('data-options') || '{}';
+						var options = JSON.parse(optionsJson);
+						var id = this.getAttribute('id');
+						var picker = new $.DtPicker(options);
+						picker.show(function(rs) {
+							result1.innerText =  rs.text;
+							picker.dispose();
+						});
+					}, false);
+				});
+				btns2.each(function(i, btn) {
+					btn.addEventListener('tap', function() {
+						var optionsJson = this.getAttribute('data-options') || '{}';
+						var options = JSON.parse(optionsJson);
+						var id = this.getAttribute('id');
+						var picker = new $.DtPicker(options);
+						picker.show(function(rs) {
+							result2.innerText =  rs.text;
+							picker.dispose();
+						});
+					}, false);
+				});
+			})(mui);
+			
+			api.getPicture({
+			    sourceType: 'camera',
+			    encodingType: 'jpg',
+			    mediaValue: 'pic',
+			    destinationType: 'url',
+			    allowEdit: true,
+			    quality: 50,
+			    targetWidth: 100,
+			    targetHeight: 100,
+			    saveToPhotoAlbum: false
+			}, function(ret, err) {
+			    if (ret) {
+			        alert(JSON.stringify(ret));
+			    } else {
+			        alert(JSON.stringify(err));
+			    }
+			});
+			
+			function openAppr(htmlurl)
+			{
+				api.openWin({
+			        name: 'appr',
+			        url: htmlurl
+		        });
+	        }
+	</script>
+</html>

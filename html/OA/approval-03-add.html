@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>OA-新加授权</title>
+		<link rel="stylesheet" type="text/css" href="../../css/mui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/app_common.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/OA/approval-03-add.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/OA/mui.picker.all.css"/>
+		<style>
+			.add_name,.add_start,.add_stop,.add_reason{
+				width: 100%;height: 1.25rem;background: white;
+				margin-top: 0.468rem;padding-left: 1.093rem;
+				padding-right: 1.093rem;
+				font-size: 0.375rem;
+			}
+			.add_reason{height: 3.125rem;}
+			.add_l{color: #323232;line-height: 1.25rem;}
+			.add_r1{margin-left: 0.468rem;}
+			.add_r2{margin-left: 2.72rem;}
+			.add_span1{float: right;margin-top: 0.234rem;}
+			.add_span2{float: right;margin-top: 0.234rem;}
+			
+			textarea {
+				border: none !important;
+				height: 1.875rem;
+			}
+			input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{
+				font-size:0.375rem;
+			}
+			
+			.add_ok{width: 100%;height: 1.25rem;margin-top: 0.468rem;}
+			.add_ok>button{width: 100%;height: 1.25rem;border: 0;color: white;}
+			.mui-dtpicker-header button{border: none;color: #2DA5FF;font-size: 0.5rem;background: transparent;}
+			.mui-dtpicker-header{background: white;}
+			.mui-dtpicker-body{height: 4rem;}
+			.add_start,.add_stop{border: none;}
+			.mui-btn-block{padding: 0 1.093rem;overflow: hidden;}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-pull-left mui-disabled" onclick="api.closeWin();"><img src="../../image/spot-sup/back.png" alt="" /></a>
+		    <h1 class="mui-title">新加授权</h1>
+		</header>
+		<div class="mui-content">
+		    <div class="add_name" id="person-choice.html" onclick="openHtml('person-choice.html')">
+		    	<a >
+		    		<label for="" class="add_l">被授权人：</label><label for="" class="add_r1">张三</label><span class="mui-icon mui-icon-plusempty add_span1"></span>
+		    	</a>
+		    </div>
+		    <button class="add_start btn1 mui-btn mui-btn-block">
+		    	<!--开始时间的设置-->
+		    		<label for="" class="add_l" style="float: left;">启用时间：</label><label id='pickDateBtn1' class="add_r2" style="float: left;margin-top: 10px;">2016-10-11 09:30</label><span class="mui-icon mui-icon-arrowright add_span2" style="margin-top: 0.4rem;"></span>
+		    	
+		    </button>
+		    <button class="add_stop btn2 mui-btn mui-btn-block">
+		     	<!--结束时间的设置-->
+		     		<label for="" class="add_l" style="float: left;">停用时间：</label><label id='pickDateBtn2' class="add_r2" style="float: left;margin-top: 10px;">2016-10-11 09:30</label><span class="mui-icon mui-icon-arrowright add_span2" style="margin-top: 0.4rem;"></span>
+		     	
+		    </button>
+		    <div class="add_reason">
+		    	<label for="" class="add_l">授权原因：</label>
+		    	<div class="row mui-input-row">
+					<textarea id='reason' class="mui-input-clear" placeholder="授权原因..."></textarea>
+				</div>
+		    </div>
+		    <div class="add_ok">
+		    	<button>启用</button>
+		    </div>
+		</div>
+	</body>
+	<script src="../../script/api.js"></script>
+	<script src="../../script/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../script/common.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../script/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		mui.init({
+			swipeBack:true
+		});
+		(function($) {
+			$.init();
+			var result1 = $('#pickDateBtn1')[0];
+			var result2 = $('#pickDateBtn2')[0];
+			var btns1 = $('.btn1');
+			var btns2 = $('.btn2');
+			btns1.each(function(i, btn) {
+				btn.addEventListener('tap', function() {
+					var optionsJson = this.getAttribute('data-options') || '{}';
+					var options = JSON.parse(optionsJson);
+					var id = this.getAttribute('id');
+					/*
+					 * 首次显示时实例化组件
+					 * 示例为了简洁，将 options 放在了按钮的 dom 上
+					 * 也可以直接通过代码声明 optinos 用于实例化 DtPicker
+					 */
+					var picker = new $.DtPicker(options);
+					picker.show(function(rs) {
+						/*
+						 * rs.value 拼合后的 value
+						 * rs.text 拼合后的 text
+						 * rs.y 年，可以通过 rs.y.vaue 和 rs.y.text 获取值和文本
+						 * rs.m 月，用法同年
+						 * rs.d 日，用法同年
+						 * rs.h 时，用法同年
+						 * rs.i 分（minutes 的第二个字母），用法同年
+						 */
+						result1.innerText = rs.text;
+						/* 
+						 * 返回 false 可以阻止选择框的关闭
+						 * return false;
+						 */
+						/*
+						 * 释放组件资源，释放后将将不能再操作组件
+						 * 通常情况下，不需要示放组件，new DtPicker(options) 后，可以一直使用。
+						 * 当前示例，因为内容较多，如不进行资原释放，在某些设备上会较慢。
+						 * 所以每次用完便立即调用 dispose 进行释放，下次用时再创建新实例。
+						 */
+						picker.dispose();
+					});
+				}, false);
+			});
+			btns2.each(function(i, btn) {
+				btn.addEventListener('tap', function() {
+					var optionsJson = this.getAttribute('data-options') || '{}';
+					var options = JSON.parse(optionsJson);
+					var id = this.getAttribute('id');
+					/*
+					 * 首次显示时实例化组件
+					 * 示例为了简洁，将 options 放在了按钮的 dom 上
+					 * 也可以直接通过代码声明 optinos 用于实例化 DtPicker
+					 */
+					var picker = new $.DtPicker(options);
+					picker.show(function(rs) {
+						/*
+						 * rs.value 拼合后的 value
+						 * rs.text 拼合后的 text
+						 * rs.y 年，可以通过 rs.y.vaue 和 rs.y.text 获取值和文本
+						 * rs.m 月，用法同年
+						 * rs.d 日，用法同年
+						 * rs.h 时，用法同年
+						 * rs.i 分（minutes 的第二个字母），用法同年
+						 */
+						result2.innerText = rs.text;
+						/* 
+						 * 返回 false 可以阻止选择框的关闭
+						 * return false;
+						 */
+						/*
+						 * 释放组件资源，释放后将将不能再操作组件
+						 * 通常情况下，不需要示放组件，new DtPicker(options) 后，可以一直使用。
+						 * 当前示例，因为内容较多，如不进行资原释放，在某些设备上会较慢。
+						 * 所以每次用完便立即调用 dispose 进行释放，下次用时再创建新实例。
+						 */
+						picker.dispose();
+					});
+				}, false);
+			});
+		})(mui);
+	</script>
+</html>

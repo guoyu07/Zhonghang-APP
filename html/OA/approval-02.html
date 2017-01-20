@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>OA-我发起的</title>
+		<link rel="stylesheet" type="text/css" href="../../css/mui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/app_common.css"/>
+		<style>
+			.mui-color{color: white;}
+			.mui-disabled img{width: 0.625rem;line-height: 0.625rem;margin-top: 15px;}
+			
+			.mine_bd{width: 100%;height: 2.343rem;background: white;padding: 0.4rem 1.093rem;margin-top: 0.468rem;}
+			.mine_ll{color: #323232;font-size: 0.437rem;}
+			.mine_lr{color: #969696;font-size: 0.375rem;}
+			.mine_fl{float: right;margin-right: 0;}
+			
+			/*背景处理*/
+			#bg-text{display: none;}
+			.mine_bg{width: 100%;height: 100%;position: fixed;top: 0;right: 0;background: #000064;opacity: 0.2;z-index: 1;}
+			#mine_tanc{
+				width: 100%;height: 3.906rem;
+				position: fixed;top: 0.687rem;right: 0;
+				background: white;z-index: 2;
+				padding-top: 1rem;
+				overflow: hidden;
+			}
+			#mine_tanc label{display: inline-block;width: 3.78rem;text-align: center;font-size: 0.437rem;}
+			.mine_no{color: #C8C8C8;margin-top: 0.234rem;}
+			.mine_xuanz{color: #323232;}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-pull-left mui-disabled" onclick="api.closeWin();"><img src="../../image/spot-sup/back.png" alt="" /></a>
+		    <h1 class="mui-title">我发起的<span class="mui-icon mui-icon-arrowdown mui-color" id="start-down"></span></h1>
+		    <a href="" class="mui-pull-right  mui-disabled" id="text-more"><img src="../../image/spot-sup/search.png"/></a>
+		</header>
+		<div class="mui-content">
+			<!--遮罩效果-->
+			<div id="bg-text">
+				<div class="mine_bg" id="close-bg">
+				</div>
+				<div id="mine_tanc">
+					<label for="" class="mine_xuanz">全部申请</label>|<label for="" class="mine_no">审批类型1</label>|<label for="" class="mine_no">审批类型2</label><br /><br />
+					<label for="" class="mine_no">审批类型3</label>|<label for="" class="mine_no">审批类型4</label>
+				</div>
+			</div>
+			
+			
+			<!--主题内容-->
+		    <div class="mine_bd">
+		    	<a id="approval-02-detail.html" onclick="openAppr('approval-02-detail.html');">
+		    		<label for="" class="mine_ll">物流合同草拟事项</label><label for="" class="mine_lr mine_fl">2016-11-22</label><br />
+		    		<label for="" class="mine_lr">部门经理审批中...</label>
+		    	</a>
+		    </div>
+		    
+		    <div class="mine_bd">
+		    	<a id="approval-02-detail.html" onclick="openAppr('approval-02-detail.html');">
+		    		<label for="" class="mine_ll">物流合同草拟事项</label><label for="" class="mine_lr mine_fl">2016-11-22</label><br />
+		    		<label for="" class="mine_lr">部门经理审批中...</label>
+		    	</a>
+		    </div>
+		    <div class="mine_bd">
+		    	<a id="approval-02-detail.html" onclick="openAppr('approval-02-detail.html');">
+		    		<label for="" class="mine_ll">物流合同草拟事项</label><label for="" class="mine_lr mine_fl">2016-11-22</label><br />
+		    		<label for="" class="mine_lr">部门经理审批中...</label>
+		    	</a>
+		    </div>
+		    <div class="mine_bd">
+		    	<a id="approval-02-detail.html" onclick="openAppr('approval-02-detail.html');">
+		    		<label for="" class="mine_ll">物流合同草拟事项</label><label for="" class="mine_lr mine_fl">2016-11-22</label><br />
+		    		<label for="" class="mine_lr">部门经理审批中...</label>
+		    	</a>
+		    </div>
+		</div>
+	</body>
+	<script src="../../script/api.js"></script>
+	<script src="../../script/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../script/common.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var btn = document.getElementById("start-down");
+		var bg = document.getElementById("bg-text");
+		var clo = document.getElementById("close-bg");
+		btn.addEventListener('tap',function(){
+			bg.style.display = 'block';
+		});
+		clo.addEventListener('tap',function(){
+			bg.style.display = 'none';
+		});
+		
+		function openAppr(htmlurl){
+			
+			api.openWin({
+		        name: 'appr',
+		        url: htmlurl
+			});
+		}
+		
+		function openFrame(htmlurl){
+			
+			api.openWin({
+		        name: 'main',
+		        url: htmlurl
+			});
+		}
+	</script>
+</html>

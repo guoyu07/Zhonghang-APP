@@ -1,0 +1,49 @@
+.odr_dingd{width: 100%;height: 5.156rem;margin-top: 0.468rem;background: white;overflow: hidden;}
+.odr_form{
+	width: 9.531rem;
+	margin-left: 1.093rem;
+	border-bottom: 0.031rem solid #f0f0f0;
+	padding-top:0.312rem;padding-bottom: 0.312rem;
+}
+.odr_form>div{line-height: 0.781rem;}
+.odr_name{font-size: 0.437rem;color: #323232;}
+.odr_time{margin-top:0.156rem;}
+.odr_x{font-size: 0.375rem;color: #323232;}
+.odr_x:active{color: #969696;}
+.huowu_x{margin-left: 0.156rem;font-size: 12px;}
+#jiaohuo_add{margin-left: 1.562rem;}
+.sub_btn{
+	color: #2DA5FF;
+	width: 11.718rem;line-height:0.687rem;
+	border: 0;
+}
+
+/*交易单详情*/
+.tab_f{
+	width: 9.531rem;height: auto;
+	margin: 0 auto;margin-top: 1.25rem;
+	border-left: 0.031rem solid #C8C8C8;
+	font-size: 0.187rem;
+	padding-bottom:0.1rem ;
+	/*overflow: hidden;*/
+}
+.tab_v{width: 9.531rem;height: auto;margin-bottom: 0.937rem;border: 1px solid transparent;}
+
+.tab_v_yuan,.tab_v_wenzi,.tab_v_miaoshu{float: left;}
+.tab_v_yuan{width: 0.312rem;height: 0.312rem;border-radius: 50%;background: #C8C8C8;position: relative;left: -0.18rem;}
+.tab_v_wenzi{font-size: 0.187rem;color: #646464;width: 24px;line-height: 24px;margin-left: 0.625rem;}
+.tab_v_miaoshu{font-size: 0.187rem;margin-left: 0.937rem;width:6rem;}
+
+.tab_v_sel{
+	width: 0.468rem;height: 0.468rem;
+	background: #2DA5FF;border: 0.078rem solid #a2d7ff;
+	position: relative;left: -0.27rem;bottom: 0.031rem;
+}
+.tab_wenzi_sel{color: #1d6ba6;position: relative;left: -0.156rem;}
+.tab_miaoshu_sel{color: #2DA5FF;position: relative;left: -0.156rem;}
+#odr_fg{margin-left: 1.093rem;}
+.clear{width: 0;height: 0;clear: both;}
+
+
+/*已催单的样式类*/
+.odr_cuidan{color: #C8C8C8;}

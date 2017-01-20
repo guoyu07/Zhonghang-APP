@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>OA-已发送</title>
+		<link rel="stylesheet" type="text/css" href="../../css/mui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/app_common.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/OA/person-choice.css"/>
+		<style>
+			.mui-bar {
+				-webkit-box-shadow: none;
+				box-shadow: none;
+			}
+			.mui-disabled img{width: 0.625rem;height: 0.625rem;margin-top: 13px;}
+			.mui-table-view{
+				padding: 0.625rem 1.093rem 0.625rem 1.093rem;
+				margin-bottom: 0.468rem;
+			}
+			.mui-table-view .email_name{font-size: 0.437rem;color: #323232;}
+			.mui-table-view .email_time{font-size: 0.375rem;float: right;}
+			.mui-table-view .email_rea{font-size: 0.375rem;color: #323232;}
+			.mui-search{border: 0.125rem solid #D5D5D5;border-radius: 0.031rem;}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-pull-left mui-disabled" onclick="api.closeWin();"><img src="../../image/spot-sup/back.png" alt="" /></a>
+		    <h1 class="mui-title">已发送</h1>
+		    <a id="Email-01.html" onclick="newEmail('Email-01.html');" class="mui-pull-right  mui-disabled"><img src="../../image/17/write.png"/></a>
+		</header>
+		<div class="mui-content">
+		    <div class="mui-indexed-list-search mui-input-row mui-search">
+				<input type="search" class="mui-input-clear mui-indexed-list-search-input" placeholder="搜索">
+			</div>
+			<div class="mui-table-view">
+				<label for="" class="email_name">张三</label><span for="" class="email_time">14:30</span><br />
+				<label for="" class="email_rea">通用函数借口说明</label>
+				<p style="text-align: justify;">
+					如果邮件内容无法显示，请点击这本邮件及其附件为机密信息，仅供指定收件人使用。若收件有误，请立即回复邮件知会
+					发件人并将此邮件从你的计算机系统删除！
+				</p>
+			</div>
+			<div class="mui-table-view">
+				<label for="" class="email_name">张三</label><span for="" class="email_time">昨天</span><br />
+				<label for="" class="email_rea">通用函数借口说明</label>
+				<p style="text-align: justify;">
+					如果邮件内容无法显示，请点击这本邮件及其附件为机密信息，仅供指定收件人使用。若收件有误，请立即回复邮件知会
+					发件人并将此邮件从你的计算机系统删除！
+				</p>
+			</div>
+			<div class="mui-table-view">
+				<label for="" class="email_name">张三</label><span for="" class="email_time">2016-11-11</span><br />
+				<label for="" class="email_rea">通用函数借口说明</label>
+				<p style="text-align: justify;">
+					如果邮件内容无法显示，请点击这本邮件及其附件为机密信息，仅供指定收件人使用。若收件有误，请立即回复邮件知会
+					发件人并将此邮件从你的计算机系统删除！
+				</p>
+			</div>
+		</div>
+	</body>
+	<script src="../../script/api.js"></script>
+	<script src="../../script/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../script/common.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		function newEmail(htmlurl){
+			
+			api.openWin({
+	            name: 'new',
+	            url: htmlurl
+	   		});
+		}
+	</script>
+</html>

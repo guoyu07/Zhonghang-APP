@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>OA-出差申请</title>
+		<link rel="stylesheet" type="text/css" href="../../css/mui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/app_common.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/OA/approval-03-add.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/OA/mui.picker.all.css"/>
+		<style>
+			.mui-content{overflow-x: hidden;}
+			.add_span2{font-size: 0.437rem;margin-top: 0.468rem;}
+			.mui-dtpicker-header button{border: none;color: #2DA5FF;font-size: 0.5rem;background: transparent;}
+			.mui-dtpicker-header{background: white;}
+			.mui-dtpicker-body{height: 4rem;}
+			.add_start,.add_stop{border: none;}
+			.mui-btn-block{padding: 0 1.093rem;overflow: hidden;}
+			.new-search{background: white;width: 4.687rem;}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-pull-left mui-disabled" onclick="api.closeWin();"><img src="../../image/spot-sup/back.png" alt="" /></a>
+		    <h1 class="mui-title">出差申请</h1>
+		</header>
+		<div class="mui-content">
+		    <div class="add_name">
+		    	<div class="mui-indexed-list-search mui-input-row">
+		    		<label for="" class="add_l" style="margin-left: -15px;">流程标题：</label><input type="search" class="mui-input-clear mui-indexed-list-search-input new-search" placeholder="张三的请假申请">
+		    	</div>
+		    </div>
+		    <div class="add_name">
+		    	<div class="mui-indexed-list-search mui-input-row">
+		    		<label for="" class="add_l" style="margin-left: -15px;">出差人员：</label><input type="search" class="mui-input-clear mui-indexed-list-search-input new-search" placeholder="张三">
+		    	</div>
+		    </div>
+		    <div class="add_start">
+		    	<div class="mui-indexed-list-search mui-input-row">
+		    		<label for="" class="add_l" style="margin-left: -15px;">所属部门：</label><input type="search" class="mui-input-clear mui-indexed-list-search-input new-search" placeholder="技术部">
+		    	</div>
+		    </div>
+		    <div class="add_start">
+		    	<div class="mui-indexed-list-search mui-input-row">
+		    		<label for="" class="add_l" style="margin-left: -15px;">同行人员：</label><input type="search" class="mui-input-clear mui-indexed-list-search-input new-search" placeholder="孙小美">
+		    	</div>
+		    </div>
+		    
+		    
+		    <div class="add_name" >
+		    	<div class="mui-indexed-list-search mui-input-row">
+		    		<label for="" class="add_l" style="margin-left: -15px;">出发地：</label><input type="search" class="mui-input-clear mui-indexed-list-search-input new-search" placeholder="上海">
+		    	</div>
+		    		
+		    	
+		    </div>
+		    <div class="add_start">
+		    	<div class="mui-indexed-list-search mui-input-row">
+		    		<label for="" class="add_l" style="margin-left: -15px;">目的地：</label><input type="search" class="mui-input-clear mui-indexed-list-search-input new-search" placeholder="深圳">
+		    	</div>
+		    		
+		    	
+		    </div>
+		    <button class="add_start btn1 mui-btn mui-btn-block" > 
+		    	<!--开始时间的设置-->
+		    		<label for="" class="add_l" style="float: left;">出发日期：</label><label id='pickDateBtn1' class="add_r2" style="float: left;margin-top: 10px;">2016-10-11 09:30</label><span class="mui-icon mui-icon-arrowright add_span2"></span>
+		    	
+		    </button>
+		    <button class="add_stop btn2 mui-btn mui-btn-block" >
+		     	<!--结束时间的设置-->
+		     		<label for="" class="add_l" style="float: left;">返回日期：</label><label id='pickDateBtn2' class="add_r2" style="float: left;margin-top: 10px;">2016-10-11 09:30</label><span class="mui-icon mui-icon-arrowright add_span2"></span>
+		     	
+		    </button>
+		    
+		    <div class="time_g">
+		    	<label for="" class="time_ga">共</label><label for="" id="time_day">4</label><label for="" class="time_ga">天</label><label for="" id="time_hour">0</label><label for="" class="time_ga">小时</label><label for="" id="time_min">0</label><label for="" class="time_ga">分</label>
+		    </div>
+		    <button class="add_start btn3 mui-btn mui-btn-block" >
+		    	<!--开始时间的设置-->
+		    		<label for="" class="add_l" style="float: left;">实际出发日期：</label><label id='pickDateBtn3' class="add_r2" style="float: left;margin-top: 10px;">2016-10-11 09:30</label><span class="mui-icon mui-icon-arrowright add_span2"></span>
+		    	
+		    </button>
+		    <button class="add_stop btn4 mui-btn mui-btn-block" >
+		     	<!--结束时间的设置-->
+		     		<label for="" class="add_l" style="float: left;">实际返回日期：</label><label id='pickDateBtn4' class="add_r2" style="float: left;margin-top: 10px;">2016-10-11 09:30</label><span class="mui-icon mui-icon-arrowright add_span2"></span>
+		     	
+		    </button>
+		    <div class="time_g">
+		    	<label for="" class="time_ga">共</label><label for="" id="time_day">4</label><label for="" class="time_ga">天</label><label for="" id="time_hour">0</label><label for="" class="time_ga">小时</label><label for="" id="time_min">0</label><label for="" class="time_ga">分</label>
+		    </div>
+		    
+		    <div class="add_name">
+		    	<div class="mui-indexed-list-search mui-input-row">
+		    		<label for="" class="add_l" style="margin-left: -15px;">租借费用：</label><input type="search" class="mui-input-clear mui-indexed-list-search-input new-search" placeholder="6666.00">
+		    	</div>
+		    	<!--<a href="">
+		    		<label for="" class="add_l">租借费用：</label><label for="" class="add_r1">6666.00</label>
+		    	</a>-->
+		    </div>
+		    <div class="add_reason">
+		    	<label for="" class="add_l">出差事由：</label>
+		    	<div class="row mui-input-row">
+				<textarea id='reason' class="mui-input-clear" placeholder="出差原因..."></textarea>
+				</div>
+		    </div>
+		    <div class="add_reason">
+		    	<label for="" class="add_l">主要事项汇报：</label>
+		    	<div class="row mui-input-row">
+				<textarea id='reason' class="mui-input-clear" placeholder="输入内容..."></textarea>
+				</div>
+		    </div>
+		    <div class="add_name">
+		    	<div class="mui-indexed-list-search mui-input-row">
+		    		<label for="" class="add_l" style="margin-left: -15px;">补贴金额：</label><input type="search" class="mui-input-clear mui-indexed-list-search-input new-search" placeholder="6666.00">
+		    	</div>
+		    	<!--<a href="">
+		    		<label for="" class="add_l">：</label><label for="" class="add_r1">6000.00</label>
+		    	</a>-->
+		    </div>
+		    <div class="add_start">
+		    	<div class="mui-indexed-list-search mui-input-row">
+		    		<label for="" class="add_l" style="margin-left: -15px;">驻厂天数：</label><input type="search" class="mui-input-clear mui-indexed-list-search-input new-search" placeholder="6">
+		    	</div>
+		    	<!--<a href="">
+		    		<label for="" class="add_l">：</label><label for="" class="add_r1">5</label>
+		    	</a>-->
+		    </div>
+		    <div class="add_start">
+		    	<div class="mui-indexed-list-search mui-input-row">
+		    		<label for="" class="add_l" style="margin-left: -15px;">驻厂补贴：</label><input type="search" class="mui-input-clear mui-indexed-list-search-input new-search" placeholder="6666.00">
+		    	</div>
+		    	<!--<a href="">
+		    		<label for="" class="add_l">：</label><label for="" class="add_r1">6000.00</label>
+		    	</a>-->
+		    </div>
+		    
+		    <div class="add_name" onclick="api.getPicture()">
+		    	<div>
+		    		<label for="" class="add_l">上传图片：</label><span class="mui-icon mui-icon-plusempty add_span1"></span>
+		    	</div>
+		    </div>
+		    <div class="add_name" id="person-choice.html" onclick="openAppr('person-choice.html')">
+		    	<a >
+		    		<label for="" class="add_l">添加审批人：</label><label for="" class="add_r1">张三;</label><label for="">李四</label><span class="mui-icon mui-icon-plusempty add_span1"></span>
+		    	</a>
+		    </div>
+		    <div class="add_ok">
+		    	<button>提交申请</button>
+		    </div>
+		</div>
+	</body>
+	<script src="../../script"></script>
+	<script src="../../script/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../script/common.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script src="../../script/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		mui.init({
+			swipeBack:true
+		});
+	</script>
+	<script>
+			(function($) {
+				$.init();
+				var result1 = $('#pickDateBtn1')[0];
+				var result2 = $('#pickDateBtn2')[0];
+				var result3 = $('#pickDateBtn3')[0];
+				var result4 = $('#pickDateBtn4')[0];
+				var btns1 = $('.btn1');
+				var btns2 = $('.btn2');
+				var btns3 = $('.btn3');
+				var btns4 = $('.btn4');
+				btns1.each(function(i, btn) {
+					btn.addEventListener('tap', function() {
+						var optionsJson = this.getAttribute('data-options') || '{}';
+						var options = JSON.parse(optionsJson);
+						var id = this.getAttribute('id');
+						var picker = new $.DtPicker(options);
+						picker.show(function(rs) {
+							result1.innerText =  rs.text;
+							picker.dispose();
+						});
+					}, false);
+				});
+				btns2.each(function(i, btn) {
+					btn.addEventListener('tap', function() {
+						var optionsJson = this.getAttribute('data-options') || '{}';
+						var options = JSON.parse(optionsJson);
+						var id = this.getAttribute('id');
+						var picker = new $.DtPicker(options);
+						picker.show(function(rs) {
+							result2.innerText =  rs.text;
+							picker.dispose();
+						});
+					}, false);
+				});
+				btns3.each(function(i, btn) {
+					btn.addEventListener('tap', function() {
+						var optionsJson = this.getAttribute('data-options') || '{}';
+						var options = JSON.parse(optionsJson);
+						var id = this.getAttribute('id');
+						var picker = new $.DtPicker(options);
+						picker.show(function(rs) {
+							result3.innerText =  rs.text;
+							picker.dispose();
+						});
+					}, false);
+				});
+				btns4.each(function(i, btn) {
+					btn.addEventListener('tap', function() {
+						var optionsJson = this.getAttribute('data-options') || '{}';
+						var options = JSON.parse(optionsJson);
+						var id = this.getAttribute('id');
+						var picker = new $.DtPicker(options);
+						picker.show(function(rs) {
+							result4.innerText =  rs.text;
+							picker.dispose();
+						});
+					}, false);
+				});
+			})(mui);
+			
+			function openAppr(htmlurl)
+			{
+				api.openWin({
+			        name: 'appr',
+			        url: htmlurl
+		        });
+	        }
+	        
+	        api.getPicture({
+			    sourceType: 'camera',
+			    encodingType: 'jpg',
+			    mediaValue: 'pic',
+			    destinationType: 'url',
+			    allowEdit: true,
+			    quality: 50,
+			    targetWidth: 100,
+			    targetHeight: 100,
+			    saveToPhotoAlbum: false
+			}, function(ret, err) {
+			    if (ret) {
+			        alert(JSON.stringify(ret));
+			    } else {
+			        alert(JSON.stringify(err));
+			    }
+			});
+		</script>
+</html>

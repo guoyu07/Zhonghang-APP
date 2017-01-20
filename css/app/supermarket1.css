@@ -1,0 +1,79 @@
+.market_hd{
+	position:fixed;top:45px;left:0;
+	width: 11.718rem;height: 0.937rem;
+	background: white;
+	z-index: 2;
+	margin-top:-1px;
+	border-bottom: 1px solid #c8c8c8;
+	/*overflow: hidden;*/
+}
+.market_hd_s{
+	width: 5.8rem;
+	height:0.937rem;
+	float: left;
+}
+.mkt_jz{
+	/*width: 54px;*/
+	height:0.937rem;
+	margin-left: 33%;
+	display: inline-block;
+	/*text-align: center;*/
+}
+.fenge{
+	width: 0;height: 0.468rem;
+	border: 1px solid #c8c8c8;
+	border-radius: 1px;
+/*	position: absolute;top: 0.234rem;right: 50%;*/
+	float: left;margin-top: 0.234rem;
+}
+/*对标题框的内容设定*/
+.mkt_hd{
+	font-size: 14px;
+	/*display: inline-block;text-align: center;*/
+	width: 5.859rem;line-height: 0.937rem;
+	/*margin-left: 2.487rem;*/
+}
+#market_hd_l{
+	color: #323232;
+}
+#market_hd_r{
+	/*margin-right: 1.562rem;*/
+	color: #C8C8C8;
+}
+.market_hd_j{
+	width: 10px;height: 20px;
+	float: right;margin-top: 0.156rem;
+}
+.mkt_c{
+	width: 10px;
+	height: 10px;
+	/*margin-bottom: -10px;*/
+}
+.mkt_c img{max-height: 100%;height: auto;margin-bottom: 10px;}
+
+
+/*表单数据*/
+.market_bd{
+	margin-top: 0.468rem;
+	background: white;
+	width: 11.718rem;height: auto;
+}
+.mkt_form{
+	background: white;
+	width: 10.937rem;height: auto;
+	margin: 0 auto;
+	border-bottom: 2px solid #969696;border-radius: 1px;
+	padding-top:0.312rem;padding-left: 0.625rem;
+	padding-bottom: 0.312rem;
+}
+.mkt_form>div{line-height: 0.781rem;}
+#huowu_add{margin-top: 0.156rem;}
+.huowu_name{font-size: 0.437rem;color: #323232;}
+.huowu_price,.huowu_num{ font-size: 0.375rem;color: #323232;}
+.huowu_add,.huowu_gong{font-size: 0.375rem;}
+
+#jiaohuo_add{margin-left: 2.187rem;}
+.huowu_x{margin-left: 0.468rem;}
+.huowu_y{margin-left: 0.312rem;}
+#huowu_price{margin-left:5.4rem;color: #d02412;}
+#huowu_number{margin-left:6.82rem;color: #173192;}

@@ -1,0 +1,44 @@
+
+body,a{color: #969696;font-family: "微软雅黑";overflow-x: hidden;}
+.mui-bar {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+.mui-bar-nav{background: #2da5ff;font-size: 22px;}
+.mui-bar-nav h1{color: white;}
+.mui-pull-left{color: white;}
+.mui-disabled{overflow-y: hidden;}
+.mui-disabled img{width: 0.625rem;line-height: 0.625rem;margin-top: 15px;}
+.mui-content{padding-bottom: 0.312rem;}
+
+/*兼容IOS7以下和Android的1px问题*/
+.scale{     position: relative; }
+.scale:after{     
+	content:"";     
+	position: absolute;     
+	bottom:0px;     
+	left:0px;     
+	right:0px;     
+	border-bottom:1px solid #ddd;     
+	-webkit-transform:scaleY(.5);     
+	-webkit-transform-origin:0 0; 
+	}
+	
+/*[data-dpr="2"] & {   
+ 	    @{name}: @px * 1px;     
+}     */
+/* for mx3 */    
+/*[data-dpr="2.5"] & {         
+	@{name}: round(@px * 2.5 / 2) * 1px;   
+}     */
+/* for 小米note*/     
+/*[data-dpr="2.75"] & {         
+	@{name}: round(@px * 2.75 / 2) * 1px;     
+}     */
+/*[data-dpr="3"] & {         
+	@{name}: round(@px / 2 * 3) * 1px;     
+}     */
+/* for 三星note4 */    
+/*[data-dpr="4"] & {         
+	@{name}: @px * 2px;     
+} */

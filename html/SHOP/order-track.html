@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>订单详情</title>
+		<link rel="stylesheet" type="text/css" href="../css/mui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/app_common.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/app/order-track.css"/>
+		
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-pull-left mui-disabled" onclick="api.closeWin();"><img src="../../image/spot-sup/back.png" alt="" /></a>
+		    <h1 class="mui-title">订单详情</h1>
+		</header>
+		<div class="mui-content">
+			<div class="odr_dingd">
+				<div class="odr_form">
+		    		<div class="odr_name">
+		    			<label for="">带钢(磅计)Q195C 2.5*326</label>
+		    		</div>
+		    		<div class="odr_time">
+		    			<label for="" class="odr_x">下单时间:</label><label for="" class="huowu_x">2016年3月14日 17时18分</label>
+		    		</div>
+		    		<div class="odr_num">
+		    			<label for="" class="odr_x">订单编号:</label><label for="" class="huowu_x">AVD1603014/02</label>
+		    		</div>
+		    		<div class="odr_bz">
+		    			<label for="" class="odr_x">币种:</label><label for="" class="huowu_x">人民币</label><label for="" class="odr_x" id="jiaohuo_add">交易额：</label><label for="" class="huowu_x">2000.00</label>
+		    		</div>
+				</div>
+		   		
+		   		<button class="sub_btn" id="sub_cuidan">我要催单</button>
+	    	</div>
+	    	
+	    	<div class="tab_f">
+	    		<div class="tab_v">
+	    			<div class="tab_v_yuan tab_v_sel"></div>
+	    			<div class="tab_v_wenzi tab_wenzi_sel">交易完成</div>
+	    			<div class="tab_v_miaoshu tab_miaoshu_sel">交易已完成</div>
+	    			<div class="clear">
+	    				
+	    			</div>
+	    		</div>
+	    		<div class="tab_v">
+	    			<div class="tab_v_yuan"></div>
+	    			<div class="tab_v_wenzi">提货</div>
+	    			<div class="tab_v_miaoshu">提货成功</div>
+	    			<div class="clear">
+	    				
+	    			</div>
+	    		</div>
+	    		<div class="tab_v">
+	    			<div class="tab_v_yuan"></div>
+	    			<div class="tab_v_wenzi">到货通知</div>
+	    			<div class="tab_v_miaoshu">您的产品已到达宁波仓库</div>
+	    			<div class="clear">
+	    				
+	    			</div>
+	    		</div>
+	    		<div class="tab_v">
+	    			<div class="tab_v_yuan"></div>
+	    			<div class="tab_v_wenzi">备货</div>
+	    			<div class="tab_v_miaoshu">备货中</div>
+	    			<div class="clear">
+	    				
+	    			</div>
+	    		</div>
+	    		<div class="tab_v">
+	    			<div class="tab_v_yuan"></div>
+	    			<div class="tab_v_wenzi">接单</div>
+	    			<div class="tab_v_miaoshu" id="tab_v_ms">中航钢铁网于2016/3/14 18：18：30已确认接单。订单交易天使【钢铁侠】(联系方式：123-4567-0000)</div>
+	    			<div class="clear">
+	    				
+	    			</div>
+	    		</div>
+	    	
+	    	</div>
+	    		<div class="tab_v" id="odr_fg">
+	    			<div class="tab_v_yuan"></div>
+	    			<div class="tab_v_wenzi">下单</div>
+	    			<div class="tab_v_miaoshu">买家【张鹏煜】<br />已于2016/3/18 18:18:30 成功下单</div>
+	    		</div>
+		</div>
+	</body>
+	
+	<script src="../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/common.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		mui.init({
+			swipeBack:true
+		});
+	mui.plusReady(function(){
+
+
+		var btn = document.getElementById("sub_cuidan");
+		var s = document.getElementsByClassName("odr_x");
+		btn.addEventListener('tap',function(){
+			this.style.color = '#969696';
+			s.style.color = '#969696';
+		});
+	});
+	
+	
+	</script>
+</html>

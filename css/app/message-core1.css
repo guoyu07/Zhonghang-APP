@@ -1,0 +1,9 @@
+.mes_core{
+	height: auto;
+	background: white;
+	padding: 0.312rem 1.093rem;
+	margin-top: 0.156rem;margin-bottom: 0.156rem;
+}
+
+.p_hd{color: #323232;font-size: 13px;text-align: center;}
+.p_zz p{font-size: 12px;color: #646464;margin-top: 0.156rem;text-align: justify;}

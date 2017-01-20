@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="telephone=no" />
+		<title>个人中心</title>
+		<link rel="stylesheet" type="text/css" href="../css/mui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/app_common.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/app/personal1.css"/>
+	</head>
+	<body>
+		<div class="mui-content">
+		    <div class="headImg">
+				<div class="touxiang">
+					<div id="touxiang_img">
+						<img src="../image/personal-center/head01.png" alt="" />
+					</div>
+					<div id="touxiang_sm">
+						<label for="" id="touxiang_gs">北京南北天地科技有限公司</label><br />
+						<div style="width: 0;height: 0;clear: both;"></div>
+						<label for="" id="touxiang_gy">账户余额</label> <span id="touxiang_yue">6000.00元</span>
+					</div>
+				</div>
+				<div class="per_mes">
+					
+				</div>
+					<button class="per_btn" id="change_password" onclick=""><a id="../SHOP/password-mod1.html" onclick="clicked(this.id);">修改密码</a></button>
+					<div id="fenge"></div>
+					<button class="per_btn" id="message_seo" onclick=""><a id="../SHOP/information-mtn1.html" onclick="clicked(this.id);">信息维护</a></button>
+			</div>
+			
+			<div class="per_mes_form">
+				<label for="" class="per_mes_att">用户名</label><label for="" class="per_mes_pal">北京南北天地科技股份有限公司</label><br />
+				<label for="" class="per_mes_att">公司名称</label><label for="" class="per_mes_pal">北京南北天地科技股份有限公司</label><br />
+				<label for="" class="per_mes_att">公司地址</label><label for="" class="per_mes_pal">北京市海淀区学院路30号天工大厦11层</label><br />
+				<label for="" class="per_mes_att">联系人</label><label for="" class="per_mes_pal">张鹏煜</label><br />
+				<label for="" class="per_mes_att">性别</label><label for="" class="per_mes_pal">男</label><br />
+				<label for="" class="per_mes_att">联系电话</label><label for="" class="per_mes_pal">152-9888-7989</label><br />
+				<label for="" class="per_mes_att">传真号</label><label for="" class="per_mes_pal">0518-96459874</label><br />
+				<label for="" class="per_mes_att">主营范围</label><label for="" class="per_mes_pal">冷轧</label><br />
+			
+				<div class="per_zx">
+					<button class="per_zhuxiao">注销登录</button>
+				</div>
+			</div>
+			
+		</div>
+		
+		<script src="../js/mui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.plusReady(function(){
+			//设置只支持竖屏幕显示
+			plus.screen.lockOrientation("portrait-primary");
+			//状态栏设置透明
+			plus.navigator.setStatusBarBackground( "transparent" );
+			});
+			
+			mui.plusReady(function(){
+				function topas(){
+					var pas = document.getElementById("change_password");
+					pas.tap = function(){
+						
+					}
+				}
+			});
+		</script>
+	</body>
+</html>

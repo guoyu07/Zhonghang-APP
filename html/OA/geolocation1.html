@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>OA-我在现场</title>
+		<link rel="stylesheet" type="text/css" href="../../css/mui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/app_common.css"/>
+		<style type="text/css">
+			#map {
+				width: 100%;
+				position: fixed;
+				top: 45px;
+				bottom: 0px;
+				line-height: 200px;
+				text-align: center;
+				background: #FFFFFF;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="mui-bar mui-bar-nav" id="header">
+			<a class="mui-pull-left mui-disabled" onclick="api.closeWin();"><img src="../../image/spot-sup/back.png" alt="" /></a>
+	   		<h1 class="mui-title">我在现场</h1>
+		</div>
+		<div id="map">地图加载中...</div>
+	</body>
+	<script type="text/javascript" src="../../script/api.js"></script>
+	<script src="../../script/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../script/common1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="../../script/immersed.js" ></script>
+	<script src="../../script/common.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script>
+	
+		apiready=function(){
+			
+			var baiduMap = api.require('baiduMap');
+			baiduMap.getLocation(function(ret, err) {
+			    if (ret) {
+					baiduMap.open({
+					    x: 0,
+					    y: $api.offset($api.byId("header")).h,
+					    w: 'auto',
+					    h: window.screen.height-$api.offset($api.byId("header")).h-$api.offset($api.byId("footer")).h-16,
+					    lat:ret.lat,
+					    lon:ret.lon
+					}, function(ret1, err2) {
+					    if (ret1.status) {	
+					    						
+							baiduMap.showUserLocation({
+							    isShow: true,
+							    trackingMode: 'none'
+							});
+							
+							baiduMap.setZoomLevel({
+							    level: 17
+							});
+							
+					    } else {
+					        alert(JSON.stringify(err2));
+					    }
+					});
+			    } else {
+			        alert(JSON.stringify(err));
+			    }
+			});
+			
+			
+		}
+	</script>
+	
+	
+	
+</html>

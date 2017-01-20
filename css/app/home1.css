@@ -1,0 +1,15 @@
+/*.mui-slider-indicator{margin-top: 100px;}*/
+#Congratulation{background: #dcfdff;width: 100%;height:0.937rem;overflow: hidden;}
+#Congratulation img{display: inline-block;width: 0.468rem;height: 0.468rem;margin: 0.234rem 0.156rem 0.468rem;float: left;}
+#Congratulation label{float: left;line-height: 0.937rem;font-size: 0.375rem;}
+.home_tab{width: 100%;background: #fafafa;overflow: hidden;}
+.mui-tab-view{width: 100%;overflow: hidden;}
+.mui-tab-view .tab_h{width:5.843rem;float: left;overflow: hidden;padding: 1.093rem 1.671rem;}
+.mui-tab-view .mui-tab-view-cell{width: 2.5rem;float: left;}
+.mui-tab-view a{width: 2.5rem;}
+.mui-tab-view img{max-width:100%;height: auto;}
+.mui-tab-view .tab_h a .mui-media-bd{text-align: center;font-size: 12px;}
+#tab_div1{border-bottom: 1px solid #e6e6e6;border-right: 1px solid #e6e6e6;}
+#tab_div2{border-left: 1px solid #e6e6e6;border-bottom: 1px solid #e6e6e6;}
+#tab_div3{border-top: 1px solid #e6e6e6;border-right: 1px solid #e6e6e6;}
+#tab_div4{border-top: 1px solid #e6e6e6;border-left: 1px solid #e6e6e6;}

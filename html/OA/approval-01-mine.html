@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>OA-我的审批</title>
+		<link rel="stylesheet" type="text/css" href="../../css/mui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/app_common.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/OA/OA-approval-02.css"/>
+		<style>
+			/*.mui-bar{height: 1.531rem;font-size: 0.562rem;color: #969696;background: white;opacity: 0.8;}*/
+			.my_card{width: 100%;height: auto;padding-top: 0.625rem;padding-left: 1.093rem;background: white;padding-bottom: 0.625rem;}
+			.my_tabl{color: #323232;}
+			.my_tabr{margin-left: 0.312rem;}
+			.my_tabx{font-size: 0.375rem;}
+			.mui-tab-view-cell img{width: 0.312rem;height: 0.312rem;margin-left: 0.156rem;}
+			
+			.my_tishi{width: 0.031rem;height: 6.718rem;border: 1px solid #C8C8C8;margin-top: 1.406rem;float: left;margin-left: 1.25rem;}
+			.my_tishiy{width: 0.312rem;height: 0.312rem;background: #04d909;position: relative;left: -0.155rem;top: -0.1rem;margin-bottom: 2.812rem;border-radius: 50%;}
+			.my_tishix{margin-top: 3rem;}
+			
+			.my_appr{float: left;width: 8.593rem;height: 7.968rem;margin-top: 0.625rem;margin-left: 0.625rem;}
+			.appr_card{width: 100%;height: 2.343rem;background: white;margin-top: 0.468rem;border-radius: 0.031rem;}
+			.appr_cl{width: 1.25rem;height: 1.25rem;border-radius: 50%;background: #C8C8C8;margin-top: 0.312rem;margin-left: 0.312rem;float: left;}
+			.appr_shm{float: left;margin-top: 0.281rem;margin-left: 0.312rem;}
+			.appr_fn{float: right;margin-right: 0.625rem;margin-top: 0.625rem;font-size: 0.5rem;}
+			.appr_fnx{color: #04D909;}
+			.appr_fnn{color: #C8C8C8;}
+			/*展开和收缩*/
+			.mui-table-view-cell.mui-active{background: transparent;}
+			.mui-table-view{width: 100%;height: auto;margin-top: 0.468rem;background: white;}
+			.mui-navigate-right:after, .mui-push-right:after{top: 23px;right: 8.125rem;}
+			.mui-table-view:before{height: 0;}
+			.mui-table-view:after{height: 0;}
+			.appr-detail{margin-top: -0.625rem;margin-bottom: -0.625rem;}
+			.mui-table-view-cell>a:not(.mui-btn){margin: -17px -30px;}
+			.mui-table-view-cell.mui-collapse .mui-collapse-content{margin: -11px -30px;}
+			
+			.mui-collapse-content .coll-top{font-size: 0.375rem;color: #969696;overflow: hidden;}
+			.mui-collapse-content .coll-top img{width: 1.25rem;height: 1.25rem;float: left;}
+			
+			.appr-mid{float: left;margin-top: 0.312rem;}
+			.appr-r{color: #2DA5FF;float: right;margin-right: 1.093rem;}
+			
+			/*背景及按钮*/
+			.text-bg{width: 100%;height: 100%;background: #000064;opacity: 0.2;position: fixed;top: 0;right: 0;z-index: 2;}
+			.text-bgl{width: 3.75rem;height: 4.687rem;background: #f7f7f7;position: fixed;bottom: 0.781rem;right: 0.14rem;z-index: 10;}
+			.text-lb{font-size: 0.375rem;color: #969696;width: 100%;line-height: 1.25rem;display: inline-block;text-align: center;}
+			.fenge{width: 2.812rem;height: 0;border: 0.5px solid #D5D5D5;margin: 0 auto;}
+			#text-bgs{display: none;z-index: 3;}
+			
+			.mui-bar{border-top: 1px solid #D5D5D5;}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav" style="margin-top: -1px">
+		    <a class="mui-pull-left mui-disabled" onclick="api.closeWin();"><img src="../../image/spot-sup/back.png" alt="" /></a>
+		    <h1 class="mui-title">我的审批</h1>
+		</header>
+		<div class="mui-content">
+		    <div class="my_card">
+		    	<div class="mui-tab-view-cell">
+		    		<label for="" class="my_tabl">主题：</label><label for="" class="my_tabl my_tabr">物流合同草拟事项</label>
+		    	</div>
+		    	<div class="mui-tab-view-cell">
+		    		<label for="" class="my_tabl my_tabx">提交人：</label><label for="" class="my_tabr my_tabx">张鹏宇</label>
+		    	</div>
+		    	<div class="mui-tab-view-cell">
+		    		<label for="" class="my_tabl my_tabx">交易员：</label><label for="" class="my_tabr my_tabx">西城药出口部（省医保）</label>
+		    	</div>
+		    	<div class="mui-tab-view-cell">
+		    		<label for="" class="my_tabl my_tabx">提交时间：</label><label for="" class="my_tabr my_tabx">2016-3-14 11:23:45（2小时前）</label>
+		    	</div>
+		    	<div class="mui-tab-view-cell appr-detail">
+		    		<div class="mui-table-view">
+		    			<li class="mui-table-view-cell mui-collapse">
+		    				<a class="mui-navigate-right huowu_name" href="#">
+				            	<label for="" class="my_tabl my_tabx">详情：</label><label for="" class="my_tabr my_tabx">展开</label>
+				            </a>
+				            <div class="mui-collapse-content" style="background: transparent;">
+				            	<div class="coll-top" >
+				            		<label for="" class="num-l">【发货单号】</label><span class="num-r">1643334343-5-9</span><br />
+					            	<label for="" class="num-l">【销售合同号】</label><span class="num-r">1643334343</span><br />
+					            	<label for="" class="num-l">【发货日期】</label><span class="num-r">2016-12-12</span><br />
+					            	<label for="" class="num-l">【委托方】</label><span class="num-r">杭州市阿里巴巴有限公司</span><br />
+					            	<label for="" class="num-l">【代理费方式】</label><span class="num-r">美元/人民币</span><br />
+					            	<label for="" class="num-l">【代理费率/代理费】</label><span class="num-r">0.05</span><br />
+					            	<label for="" class="num-l">【客户】</label><span class="num-r">网易公司</span><br />
+					            	<label for="" class="num-l">【币种】</label><span class="num-r">USD</span><br />
+					            	<label for="" class="num-l">【金额】</label><span class="num-r">66666.00</span><br />
+					            	<label for="" class="num-l">【贸易方式】</label><span class="num-r">一般贸易</span><br />
+					            	<label for="" class="num-l">【收款方式描述】</label><span class="num-r">1643334343 货后 T/T 100% 66666.00 2016-12-12</span><br />
+					            	<label for="" class="num-l">【商品描述】</label><span class="num-r">手工编织藤椅</span>
+								</div>	
+				            </div>
+		    			</li>
+		    		</div>
+		    	</div>
+		    	<div class="mui-tab-view-cell appr-detail">
+		    		<div class="mui-table-view">
+		    			<li class="mui-table-view-cell mui-collapse">
+			    			<a class="mui-navigate-right huowu_name" href="#">
+		            			<label for="" class="my_tabl my_tabx">附件：</label><label for="" class="my_tabr my_tabx">展开</label>
+			           	 	</a>
+				            <div class="mui-collapse-content" style="background: transparent;">
+				            	<div class="coll-top">
+				            		<div style="overflow: hidden;">
+				            			<img src="../../image/08/logo.png"/><label for="" class="appr-mid">物流合作细节.doc</label><label class="appr-mid appr-r">查看</label>
+				            		</div>
+				            		<div style="overflow: hidden;">
+				            			<img src="../../image/08/logo.png"/><label for="" class="appr-mid">物流合作细节.doc</label><label class="appr-mid appr-r">查看</label>
+				            		</div>
+								</div>	
+				            </div>
+			    		</li>
+		    		</div>
+		    	</div>
+		    </div>
+		    
+		    <div class="my_tishi">
+		    	<div class="my_tishiy"></div>
+		    	<div class="my_tishiy my_tishix"></div>
+		    	<div class="my_tishiy my_tishix"></div>
+		    </div>
+		    <div class="my_appr">
+		    	<div class="appr_card">
+		    		<div class="appr_cl"></div>
+		    		<div class="appr_shm">
+		    			<label for="" class="my_tabl my_tabx">宋世静</label><label for="" class="my_tabr my_tabx">经理审批</label><br />
+		    			<label for="" class="my_tabx">2016-3-14 11:23:45</label>
+		    		</div>
+		    		<div class="appr_fn"><label for="" class="appr_fnx">通过</label></div>
+		    	</div>
+		    	<div class="appr_card">
+		    		<div class="appr_cl"></div>
+		    		<div class="appr_shm">
+		    			<label for="" class="my_tabl my_tabx">钱夫人</label><label for="" class="my_tabr my_tabx">财务审批</label><br />
+		    			<label for="" class="my_tabx">2016-3-14 11:23:45</label>
+		    		</div>
+		    		<div class="appr_fn"><label for="" class="appr_fnx">通过</label></div>
+		    	</div>
+		    	<div class="appr_card">
+		    		<div class="appr_cl"></div>
+		    		<div class="appr_shm">
+		    			<label for="" class="my_tabl my_tabx">宋世静</label><label for="" class="my_tabr my_tabx">部门经理审批</label><br />
+		    			<!--<label for="">2016-3-14 11:23:45</label>-->
+		    		</div>
+		    		<div class="appr_fn"><label for="" class="appr_fnn">待审</label></div>
+		    	</div>
+		    </div>
+		    
+		   	<!--遮罩层及‘其他’按钮-->
+		    <div id="text-bgs">
+				<div class="text-bg" id="close-bg">
+				
+				</div>
+				<div class="text-bgl">
+					<label for="" class="text-lb">保留意见并上报</label>
+					<div class="fenge"></div>
+					<label for="" class="text-lb">转候选人</label>
+					<div class="fenge"></div>
+					<label for="" class="text-lb" id="text-btncle">撤回</label>
+				</div>
+			</div>
+		    
+		    <nav class="mui-bar mui-bar-tab">
+				<a class="mui-tab-item" id="change1">
+			        <span class="mui-tab-label">同意</span>
+			    </a>
+			    <a class="mui-tab-item" id="change2">
+			        <span class="mui-tab-label">驳回</span>
+			    </a>
+			    <a class="mui-tab-item" href="" id="text-more">
+			        <span class="mui-tab-label">其他</span>
+			    </a>
+			</nav>
+		</div>
+	</body>
+	<script src="../../script/api.js"></script>
+	<script src="../../script/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../script/common.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		var btn = document.getElementById("text-bgs");
+		var mor = document.getElementById("text-more");
+		var cle = document.getElementById("text-btncle");
+		var clo = document.getElementById("close-bg");
+		mor.addEventListener('tap',function(){
+				btn.style.display = 'block';
+			});
+		cle.addEventListener('tap',function(){
+			btn.style.display = 'none';
+		});
+		
+		clo.addEventListener('tap',function(){
+			btn.style.display = 'none';
+		});
+		
+		var btn1 = document.getElementById("change1");
+		btn1.addEventListener('tap',function(){
+			window.location.href = 'approval-ok.html';
+		})
+		var btn2 = document.getElementById("change2");
+		btn2.addEventListener('tap',function(){
+			window.location.href = 'approval-none.html';
+		})
+	</script>	
+</html>

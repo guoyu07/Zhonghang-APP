@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>OA-我要申诉</title>
+		<link rel="stylesheet" type="text/css" href="../../css/mui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/app_common.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/OA/approval-03-add.css"/>
+		<style>
+			.mui-disabled{font-size: 0.375rem;color: white;}
+			.text-p{height: auto;margin-top: 0.781rem;background: white;padding: 0.468rem 1.093rem;font-size: 0.375rem;}
+			.text-h3{margin-left: 2rem;}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-pull-left mui-disabled" onclick="api.closeWin();"><img src="../../image/spot-sup/back.png" alt="" /></a>
+		    <h1 class="mui-title">我要申诉</h1>
+		    <a href="" class="mui-pull-right  mui-disabled" id="text-more" style="margin-top:13px">提交</a>
+		</header>
+		<div class="mui-content">
+		    <div class="add_name">
+		    	<div class="mui-indexed-list-search mui-input-row">
+		    		<label for="" class="add_l" style="margin-left: -15px;">申诉类型：</label><label for="" class="text-h3">员工培训</label><span class="mui-icon mui-icon-arrowright mui-pull-right" style="float: right;font-size: 0.6rem;margin-top: 0.35rem;"></span>
+		    	</div>
+		    </div>
+		    <div class="add_name">
+		    	<div class="mui-indexed-list-search mui-input-row">
+		    		<label for="" class="add_l" style="margin-left: -15px;">申诉标题：</label><input type="search" class="mui-input-clear mui-indexed-list-search-input new-search" placeholder="薪资调整疑问汇总分析">
+		    	</div>
+		    </div>
+		    <div class="text-p" style="text-align: left;">
+		    	<label for="" class="text-h1" style="color: #323232;">具体事由：</label>
+		    	<textarea id='reason' class="mui-input-clear" placeholder="出差原因..."></textarea>
+		    </div>
+		</div>
+	</body>
+	<script src="../../script/api.js"></script>
+	<script src="../../script/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../script/common.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		mui.init({
+			swipeBack:true
+		});
+		mui.plusReady(function(){
+			plus.navigator.setStatusBarBackground( "#2da5ff" );
+		});
+	</script>
+</html>

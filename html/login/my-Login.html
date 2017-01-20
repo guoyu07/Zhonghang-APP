@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>用户登录</title>
+		<link rel="stylesheet" href="../../css/api.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/mui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/app_common.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/login/my-Login.css"/>
+	</head>
+	<body>
+		<div class="mui-content" id="login">
+		    <div class="logo"><img src="../../image/Login/logo.png"/></div>
+		    
+		    <div class="logo_camp">中航国际矿产资源有限公司</div>
+		    
+		    <div class="login_l">
+		    	<div class="login_uer">
+		    		<div class="login_img"><img src="../../image/Login/user1.png"/></div>
+		    		
+		    	</div>
+		    	<div style="width:  5rem;height: 0;border: 1px solid white;margin-left: 1.718rem;"></div>
+		    	<div class="login_password">
+		    		<div class="login_img"><img src="../../image/Login/my-password.png"/></div>
+		    		
+		    	</div>
+		    </div>
+		    <div class="login_u">
+    			<input type="text" placeholder="请输入注册账号/手机号" style="font-size: 12px;width: 6rem;margin-left: 10px;"/>
+    		</div>
+		    <div class="login_p">
+    			<input type="password" placeholder="*******" style="font-size: 12px;margin-left: 10px;"/>
+    		</div>
+		    		
+		    <div class="login_go">
+		    	<!--背景框设置-->
+		    </div>
+		    <button class="login_go_btn" onclick="openHTML()">登录</button>
+		    
+		    <div class="login_nanbei">北京南北天地科技股份有限公司</div>
+		</div>		
+	</body>
+		<script type="text/javascript" src="../../script/mui.min.js"></script>
+		<script type="text/javascript" src="../../script/common.js"></script>
+		<script type="text/javascript" src="../../script/api.js"></script>
+		<script>
+			apiready=function(){
+				window.document.body.offsetHeight=window.screen.height;
+			}
+		
+		
+			function openHTML(){
+				api.openWin({
+		            name: '首页',
+		            url: '../../OA-index.html',
+		            slidBackEnabled:false
+	            });
+			}
+			
+		</script>
+</html>

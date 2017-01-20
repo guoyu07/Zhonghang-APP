@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>首页</title>
+		<link rel="stylesheet" type="text/css" href="../css/mui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/app/home1.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/app_common.css"/>
+	</head>
+	<body>
+		<div class="mui-content" id="home">
+		    <div id="slider" class="mui-slider">
+		      <div class="mui-slider-group mui-slider-loop">
+		        <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+		        <div class="mui-slider-item mui-slider-item-duplicate">
+		          <a href="#">
+		            <img src="../image/shop-index/banner3.png">
+		          </a>
+		        </div>
+		        <!-- 第一张 -->
+		        <div class="mui-slider-item">
+		          <a href="#">
+		            <img src="../image/shop-index/banner2.png">
+		          </a>
+		        </div>
+		        <!-- 第二张 -->
+		        <div class="mui-slider-item">
+		          <a href="#">
+		            <img src="../image/shop-index/banner3.png">
+		          </a>
+		        </div>
+		        <!-- 第三张 -->
+		        <div class="mui-slider-item">
+		          <a href="#">
+		            <img src="../image/shop-index/banner3.png">
+		          </a>
+		        </div>
+		        <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+		        <div class="mui-slider-item mui-slider-item-duplicate">
+		          <a href="#">
+		            <img src="../image/shop-index/banner2.png">
+		          </a>
+		        </div>
+		      </div>
+		      <div class="mui-slider-indicator">
+		        <div class="mui-indicator mui-active"></div>
+		        <div class="mui-indicator"></div>
+		        <div class="mui-indicator"></div>
+		      </div>
+		    </div>
+		    <div id="Congratulation">
+		    	<img src="../image/shop-index/play-btn.png"/>
+		    	<label class="mui-media-bd">热烈祝贺中航矿产钢铁网正式上线！</label>
+		    </div>
+		    <div class="home_tab">
+		    	<div class="mui-tab-view">
+			    	<div class="tab_h" id="tab_div1">
+			    		<div class="mui-tab-view-cell" id="tab_cell1">
+				        	<a id="../SHOP/supermarket1.html" onclick="clicked(this.id);">
+				            	<img class="mui-icon" src="../image/shop-index/shop-sup.png"></img>
+				            	<div class="mui-media-bd">现货超市</div>
+				        	</a>
+			    		</div>
+			    	</div>
+			    	<div class="tab_h" id="tab_div2">
+			    		<div class="mui-tab-view-cell"  id="tab_cell2">
+			        		<a id="../SHOP/resource1.html" onclick="clicked(this.id);">
+			            	<img class="mui-icon" src="../image/shop-index/shop-resource.png"></img>
+			            	<div class="mui-media-bd">期货资源</div>
+			        		</a>
+			    		</div>
+			    	</div>
+			    	<div class="tab_h" id="tab_div3">
+			    		<div class="mui-tab-view-cell"  id="tab_cell3">
+			        		<a id="../SHOP/order-detail1.html" onclick="clicked(this.id);">
+			            	<img class="mui-icon" src="../image/shop-index/shop-track.png"></img>
+			           		<div class="mui-media-bd">订单跟踪</div>
+			       			</a>
+			    		</div>
+			    	</div>
+			    	<div class="tab_h" id="tab_div4">
+			    		<div class="mui-tab-view-cell"  id="tab_cell4">
+			        		<a id="../SHOP/money-check1.html" onclick="clicked(this.id);">
+			            	<img class="mui-icon" src="../image/shop-index/shop-look.png"></img>
+			            	<div class="mui-media-bd">资金查看</div>
+			        		</a>
+			    		</div>
+			    	</div>
+		   		</div>
+		    </div>
+		    
+		</div>
+		<script src="../js/mui.min.js" charset="utf-8"></script>
+		<script src="../js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//获得slider插件对象
+			var gallery = mui(".mui-slider");
+			gallery.slider({
+				interval: 1500
+			});
+		
+			//初始化，并预加载webview模式的选项卡			
+			function preload () {
+				mui.preload({
+					url:'message-core.html',
+					styles: {
+						popGesture: 'hide'
+					}
+				});
+				mui.preload({
+					url:"personal.html",
+					styles:{
+						popGesture:'hide'
+					}
+				});
+			}
+//			
+//					subWebview.hide();
+//					headerWebview.append(subWebview);
+//					//iOS平台支持侧滑关闭，父窗体侧滑隐藏后，同时需要隐藏子窗体；
+//					if (mui.os.ios) { //5+父窗体隐藏，子窗体还可以看到？不符合逻辑吧？
+//						headerWebview.addEventListener('hide', function() {
+//							subWebview.hide("none");
+//						});
+//					}
+//					templates[name] = template = {
+//						name: name,
+//						header: headerWebview,
+//						content: subWebview,
+//					};
+//				}
+//				return template;
+//			};
+//			var initTemplates = function() {
+//				getTemplate('default', 'examples/template.html');
+//			};
+//			mui.plusReady(function() {
+//				//读取本地存储，检查是否为首次启动
+//				var showGuide = plus.storage.getItem("lauchFlag");
+//				if(showGuide){
+//					//有值，说明已经显示过了，无需显示；
+//					//关闭splash页面；
+//					plus.navigator.closeSplashscreen();
+//					plus.navigator.setFullscreen(false);
+//					//初始化模板
+//					initTemplates(); 
+//					//预加载
+//					preload();
+//				}else{
+//					//显示启动导航
+//					mui.openWindow({
+//						id:'guide',
+//						url:'examples/guide.html',
+//						show:{
+//							aniShow:'none'
+//						},
+//						waiting:{
+//							autoShow:false
+//						}
+//					});
+//					//延迟的原因：优先打开启动导航页面，避免资源争夺
+//					setTimeout(function () {
+//						//初始化模板
+//						initTemplates(); 
+//						//预加载
+//						preload();
+//					},200);
+//				}
+//			});
+//			 //主列表点击事件
+//			mui('#list').on('tap', 'a', function() {
+//				var id = this.getAttribute('href');
+//				var href = this.href;
+//				var type = this.getAttribute("open-type");
+//				//不使用父子模板方案的页面
+//				if (type == "common") {
+//					var webview_style = {
+//						popGesture: "close"
+//					};
+//					//侧滑菜单需动态控制一下zindex值；
+//					if (~id.indexOf('offcanvas-')) {
+//						webview_style.zindex = 9998;
+//						webview_style.popGesture = ~id.indexOf('offcanvas-with-right') ? "close" : "none";
+//					}
+//					//图标界面需要启动硬件加速
+//					if(~id.indexOf('icons.html')){
+//						webview_style.hardwareAccelerated = true;
+//					}
+//					mui.openWindow({
+//						id: id,
+//						url: this.href,
+//						styles: webview_style,
+//						show: {
+//							aniShow: aniShow
+//						},
+//						waiting: {
+//							autoShow: false
+//						}
+//					});
+//				} else if (id && ~id.indexOf('.html')) {
+//					if (!mui.os.plus || (!~id.indexOf('popovers.html')&&mui.os.ios)) {
+//						mui.openWindow({
+//							id: id,
+//							url: this.href,
+//							styles: {
+//								popGesture: 'close'
+//							},
+//							show: {
+//								aniShow: aniShow
+//							},
+//							waiting: {
+//								autoShow: false
+//							}
+//						});
+//					} else {
+//						//TODO  by chb 当初这么设计，是为了一个App中有多个模板，目前仅有一个模板的情况下，实际上无需这么复杂
+//						//使用父子模板方案打开的页面
+//						//获得共用模板组
+//						var template = getTemplate('default');
+//						//判断是否显示右上角menu图标；
+//						var showMenu = ~href.indexOf('popovers.html') ? true : false;
+//						//获得共用父模板
+//						var headerWebview = template.header;
+//						//获得共用子webview
+//						var contentWebview = template.content;
+//						var title = this.innerText.trim();
+//						//通知模板修改标题，并显示隐藏右上角图标；
+//						mui.fire(headerWebview, 'updateHeader', {
+//							title: title,
+//							showMenu: showMenu,
+//							target:href,
+//							aniShow: aniShow
+//						});
+//						
+//						if(mui.os.ios||(mui.os.android&&parseFloat(mui.os.version)<4.4)){
+//							var reload = true;
+//							if (!template.loaded) {
+//								if (contentWebview.getURL() != this.href) {
+//									contentWebview.loadURL(this.href);
+//								} else {
+//									reload = false;
+//								}
+//							} else {
+//								reload = false;
+//							}
+//							(!reload) && contentWebview.show();
+//							
+//							headerWebview.show(aniShow, 150);
+//						}
+//					}
+//				}
+//			});
+//			var index = null; //主页面
+//			function openMenu() {
+//				!index && (index = mui.currentWebview.parent());
+//				mui.fire(index, "menu:open");
+//			}
+//			//在android4.4.2中的swipe事件，需要preventDefault一下，否则触发不正常
+//			window.addEventListener('dragstart', function(e) {
+//				mui.gestures.touch.lockDirection = true; //锁定方向
+//				mui.gestures.touch.startDirection = e.detail.direction;
+//			});
+//			window.addEventListener('dragright', function(e) {
+//				if (!mui.isScrolling) {
+//					e.detail.gesture.preventDefault();
+//				}
+//			});
+//			 //监听右滑事件，若侧滑菜单未显示，右滑要显示菜单；
+//			window.addEventListener("swiperight", function(e) {
+//				//默认滑动角度在-45度到45度之间，都会触发右滑菜单，为避免误操作，可自定义限制滑动角度；
+//				if (Math.abs(e.detail.angle) < 4) {
+//					openMenu();
+//				}
+//			});
+		</script>
+	</body>
+</html>

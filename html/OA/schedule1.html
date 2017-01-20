@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="telephone=no" />
+		<title>OA-日程安排</title>
+		<link rel="stylesheet" type="text/css" href="../../css/mui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/app_common.css"/>
+		<style>
+			.mui-disabled img{width: 0.625rem;height: 0.625rem;margin-top: 11px;overflow-y: hidden;}
+			/*日期设置*/
+			.she-time{color: white;width: 100%;height: 3.906rem;background: #2DA5FF;font-size: 0.437rem;}
+			#time-day{margin-left: 1.093rem;}
+			#time-week{float: right;margin-right: 1.093rem;}
+			.she-timebd{width: 100%;margin-top: 0.625rem;}
+			.time-hangzi{width: 9.531rem;margin: 0 auto;text-align:center;}
+			.time-shuzi{width: 100%;margin: 0 auto;}
+			.time-hz{width: 0.75rem;height: 0.75rem;}
+			.time-hzt{width: 0.75rem;height: 0.75rem;border:1px solid #2DA5FF;border-radius: 50%;}
+			.time-shuzi{width: 100%;text-align:center;margin-top: 0.625rem;}
+			.mengban{color: #FFFFFF;opacity: 0.5;}
+			.time-sel{border:1px solid #11dee9;}
+			/*日程安排头部*/
+			.sche-anpai{width: 100%;height: 2.812rem;background: #3fadff;overflow: hidden;color: white;}
+			.sche-anpai>div{float: left;}
+			.fenge{width: 0;height: 2.187rem;border: 1px solid #FFFFFF;margin-top: 0.312rem;}
+			.time-anpai{width: 3.8rem;height: 100%;font-size: 0.437rem;}
+			.time-anpai{text-align: center;margin-top: 0.625rem;}
+			/*日程安排下面*/
+			.time-foot{width: 100%;font-size: 0.437rem;}
+			.mui-tab-item{width: 100%;line-height: 1.406rem;background: white;}
+			.time-ft{display: inline-block;line-height: 1.062rem;margin-left: 0.781rem;color: #323232;}
+			.time-left{margin-left: 0.781rem;}
+			.time-right{color: #323232;margin-left: 0.312rem;}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-pull-left mui-disabled" onclick="api.closeWin();"><img src="../../image/spot-sup/back.png" alt="" /></a>
+		    <h1 class="mui-title">日程安排</h1>
+		    <a class="mui-pull-right  mui-disabled" id="text-more" onclick="openHtml('schedule-add1.html')"><img src="../../image/28/add.png"/></a>
+		</header>
+		<div class="mui-content">
+		    <div class="she-time">
+		    	<label for="" id="time-day">2016年10月12日</label><label for="" id="time-week">一</label><label for="" style="float: right;">星期</label>
+		    	<table class="she-timebd">
+		    		<tr class="time-hangzi">
+		    			<td style="margin-left: 0.2rem;"></td>
+		    			<td><label for="" class="time-hz">日</label></td>
+		    			<td><label for="" class="time-hz">一</label></td>
+		    			<td><label for="" class="time-hz">二</label></td>
+		    			<td><label for="" class="time-hz">三</label></td>
+		    			<td><label for="" class="time-hz">四</label></td>
+		    			<td><label for="" class="time-hz">五</label></td>
+		    			<td><label for="" class="time-hz">六</label></td>
+		    			<td></td>
+		    		</tr>
+		    		<tr class="time-shuzi">
+		    			<td><label for="" class="mengban time-hz" style="margin-left: 0;">10</label></td>
+		    			<td><label for="" class="time-hzt">11</label></td>
+		    			<td><label for="" class="time-hzt time-sel">12</label></td>
+		    			<td><label for="" class="time-hzt">13</label></td>
+		    			<td><label for="" class="time-hzt">14</label></td>
+		    			<td><label for="" class="time-hzt">15</label></td>
+		    			<td><label for="" class="time-hzt">16</label></td>
+		    			<td><label for="" class="time-hzt">17</label></td>
+		    			<td><label for="" class="mengban time-hzt">18</label></td>
+		    		</tr>
+		    	</table>
+		    </div>
+		    
+		    <div class="sche-anpai">
+		    	<div class="time-anpai">
+		    		<label for="">4</label><br /><label for="">今日安排</label>
+		    	</div>
+		    	<div class="fenge"></div>
+		    	<div class="time-anpai">
+		    		<label for="">1</label><br /><label for="">明日安排</label>
+		    	</div>
+		    	<div class="fenge"></div>
+		    	<div class="time-anpai">
+		    		<label for="">9</label><br /><label for="">本周日程</label>
+		    	</div>
+		    </div>
+		    
+		    <div class="time-foot">
+		    	<label for="" class="time-ft">上午</label>
+		    	<div class="mui-tab-item">
+		    		<label for="" class="time-left">10:00</label><label for="" class="time-right">客户会面</label><br />
+		    	</div>
+			    
+			    <label for="" class="time-ft">下午</label>
+			    <div class="mui-tab-item">
+		    		<label for="" class="time-left">13:00</label><label for="" class="time-right">部门实施方案分析</label>
+		    	</div>
+			    <div class="mui-tab-item" style="margin-top: 10px;">
+		    		<label for="" class="time-left">15:00</label><label for="" class="time-right">管理层例会</label>
+		    	</div>
+			    <div class="mui-tab-item" style="margin-top: 10px;">
+		    		<label for="" class="time-left">17:00</label><label for="" class="time-right">公司聚餐</label>
+		    	</div>
+			    
+		    </div>
+		    
+		</div>
+	</body>
+	<script type="text/javascript" src="../../script/api.js"></script>
+	<script src="../../script/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../script/common.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		
+		function openHtml(htmlurl)
+		{
+			api.openWin({
+		        name: 'add',
+		        url: htmlurl
+	        });
+        }
+		
+		//日期和星期的判断
+		var date = document.getElementById('time-day');
+		var val = new Date();
+		date.innerText = val.toLocaleDateString();
+		
+		var week = document.getElementById('time-week');
+		var s = val.getDay();
+		if(s == 0){	week.innerText = '日';}
+		if(s == 1){ week.innerText = '一';}
+		if(s == 2){ week.innerText = '二';}
+		if(s == 3){ week.innerText = '三';}
+		if(s == 4){ week.innerText = '四';}
+		if(s == 5){ week.innerText = '五';}
+		if(s == 6){ week.innerText = '六';}
+		 
+		
+		
+	</script>
+</html>

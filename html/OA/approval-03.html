@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>OA-审批授权</title>
+		<link rel="stylesheet" type="text/css" href="../../css/mui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/app_common.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/OA/approval-give.css"/>
+		<style>
+			.mui-disabled{color: white;width: 0.625rem;line-height: 0.625rem;}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-pull-left mui-disabled" onclick="api.closeWin();"><img src="../../image/spot-sup/back.png" alt="" /></a>
+		    <h1 class="mui-title">审批授权<span class="mui-icon mui-icon-arrowdown mui-color"></span></h1>
+		    <a id="approval-03-add.html" class="mui-pull-right" onclick="openAppr('approval-03-add.html')" style="margin-top: 13px;color: white">+</a>
+		</header>
+		<div class="mui-content">
+		    <div class="give_bd">
+		    	<label for="" class="give_bdh">张三</label>
+		    	<div class="give_qiyong sel-change">
+		    		
+		    	</div>
+		    	<div style="width: 0;height: 0;clear: both;"></div>
+		    	<p>
+		    		授权原因
+		    	</p>
+		    	<label for="">启用时间：</label>
+		    	<label for="">2016-07-11</label>
+		    	<label for="" class="give_bdt">停用时间：</label>
+		    	<label for="">2016-07-22</label>
+		    </div>
+		    
+		    <div class="give_bd">
+		    	<label for="" class="give_bdh">张三</label>
+		    	<div class="give_tyong sel-change">
+		    		
+		    	</div>
+		    	<div style="width: 0;height: 0;clear: both;"></div>
+		    	<p>
+		    		授权原因
+		    	</p>
+		    	<label for="">启用时间：</label>
+		    	<label for="">2016-07-11</label>
+		    	<label for="" class="give_bdt">停用时间：</label>
+		    	<label for="">2016-07-22</label>
+		    </div>
+		    <div class="give_bd">
+		    	<label for="" class="give_bdh">张三</label>
+		    	<div class="give_qiyong sel-change">
+		    		
+		    	</div>
+		    	<div style="width: 0;height: 0;clear: both;"></div>
+		    	<p>
+		    		授权原因
+		    	</p>
+		    	<label for="">启用时间：</label>
+		    	<label for="">2016-07-11</label>
+		    	<label for="" class="give_bdt">停用时间：</label>
+		    	<label for="">2016-07-22</label>
+		    </div>
+		    <div class="give_bd">
+		    	<label for="" class="give_bdh">张三</label>
+		    	<div class="give_qiyong sel-change">
+		    		
+		    	</div>
+		    	<div style="width: 0;height: 0;clear: both;"></div>
+		    	<p>
+		    		授权原因
+		    	</p>
+		    	<label for="">启用时间：</label>
+		    	<label for="">2016-07-11</label>
+		    	<label for="" class="give_bdt">停用时间：</label>
+		    	<label for="">2016-07-22</label>
+		    </div>
+		    <div class="give_bd">
+		    	<label for="" class="give_bdh">张三</label>
+		    	<div class="give_qiyong sel-change">
+		    		
+		    	</div>
+		    	<div style="width: 0;height: 0;clear: both;"></div>
+		    	<p>
+		    		授权原因
+		    	</p>
+		    	<label for="">启用时间：</label>
+		    	<label for="">2016-07-11</label>
+		    	<label for="" class="give_bdt">停用时间：</label>
+		    	<label for="">2016-07-22</label>
+		    </div>
+		</div>
+	</body>
+	<script src="../../script/api.js"></script>
+	<script src="../../script/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../script/common.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		function openAppr(htmlurl)
+		{
+			api.openWin({
+		        name: 'appr',
+		        url: htmlurl
+	        });
+        }
+        
+		mui.init({
+			swipeBack:true
+		});
+		mui.ready(function(){
+			mui('.give_bd').on('tap','.sel-change',function(){
+				if(this.classList.contains('give_qiyong')){
+					this.classList.remove('give_qiyong');
+					this.classList.add('give_tyong');
+				}else{
+					if(this.classList.contains('give_tyong')){
+						this.classList.remove('give_tyong');
+						this.classList.add('give_qiyong');
+					}
+				}
+			});
+		});
+	</script>
+</html>

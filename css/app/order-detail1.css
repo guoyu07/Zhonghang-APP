@@ -1,0 +1,19 @@
+.mui-content{background: white;height: 20.843rem;}
+.order_dt{
+	width: 11.718rem;height: 5.781rem;
+}
+.order_dt>.od_img{
+	width: 1.562rem;height: auto;
+	/*background-image: url(../../image/订单跟踪/待付款.png);*/
+	float: left;margin-top: 1.562rem;
+	margin-left: 1.093rem;
+}
+.order_dt img{
+	max-width: 100%;height: auto;
+}
+.order_dt .od_lb{width:100%;display: inline-block;font-size: 0.375rem;color: #969696;text-align: center;}
+
+
+
+
+.sub_btn{color: #969696;font-size: 12px;width: 11.718rem;height: 0.937rem;background:#dfebf5 ;border: 0;border-radius: 0;}

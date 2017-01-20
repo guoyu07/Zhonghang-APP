@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>底部导航</title>
+    <link rel="stylesheet" type="text/css" href="./css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/style.css"/>
+    <style>
+        header{ background-color: #2DA5FF; }
+        header ul li { height: 45px; line-height: 45px; text-align: center; display: none; color: #FFFFFF; position: relative;font-size: 18px;  }
+        header ul li.active{ display: block; }
+        #footer{  background-color: #f2f2f2; }
+        #footer ul li{ color:#969696; padding-top: 36px; padding-bottom: 4px; background: url() no-repeat center 2px; background-size: auto 30px; text-align: center; }
+        #footer ul li.active{ color: #2DA5FF; }
+        #footer ul li:nth-child(1){ background-image: url(./image/01-nav/message-no.png); }
+        #footer ul li:nth-child(2){ background-image: url(./image/01-nav/home-no.png); }
+        #footer ul li:nth-child(3){ background-image: url(./image/01-nav/per-no.png); }
+        #footer ul li:nth-child(1).active{ background-image: url(./image/01-nav/message-ok.png); }
+        #footer ul li:nth-child(2).active{ background-image: url(./image/01-nav/home-ok.png); }
+        #footer ul li:nth-child(3).active{ background-image: url(./image/01-nav/per-ok.png); }
+    </style>
+</head>
+<body>
+<div id="wrap" class="flex-wrap flex-vertical">
+    <header>
+        <ul>
+            <li class="border-b active" >消息</li>
+            <li class="border-b" >首页</li>
+            <li class="border-b" >个人</li>
+        </ul>
+    </header>
+    <div id="main" class="flex-con">
+
+    </div>
+    <div id="footer" class="border-t">
+        <ul class="flex-wrap" >
+            <li tapmode="hover" onclick="randomSwitchBtn( this );" class="flex-con active" >消息</li>
+            <li tapmode="hover" onclick="randomSwitchBtn( this );" class="flex-con" >首页</li>
+            <li tapmode="hover" onclick="randomSwitchBtn( this );" class="flex-con" >个人</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
+<script type="text/javascript" src="script/api.js"></script>
+<script type="text/javascript">
+    apiready = function () {
+    	//var $header = $api.dom('header');
+        //适配iOS7+系统状态栏，为传入的DOM元素增加20px的上内边距;需与 <preference name="iOS7StatusBarAppearance" value="true"/>配合使用
+        //$api.fixIos7Bar($header);
+        //设置状态栏样式为白色（适用于深色背景）或黑色（适用于浅色背景），以及设置状态栏背景颜色;可以设置style(仅IOS有效)；color(仅Android5.0及以上有效)
+        //$api.fixStatusBar( $api.dom('header') );
+        api.setStatusBarStyle({
+            style: 'dark',
+            color: '#2da5ff'
+        });
+        funIniGroup();
+    }
+
+    function funIniGroup(){
+        var eHeaderLis = $api.domAll('header li'),
+            frames = [];
+        for (var i = 0,len = eHeaderLis.length; i < len; i++) {
+                frames.push( { 
+                    name: 'frame'+i, 
+                    url: './html/OA/frame'+i+'.html', 
+                    bgColor : 'rgba(0,0,0,.2)',
+                    bounces:true
+                } )
+        }
+        api.openFrameGroup({
+            name: 'group',
+            scrollEnabled: false,
+            rect: {
+                x: 0, 
+                y: $api.dom('header').offsetHeight, 
+                w: api.winWidth, 
+                h: $api.dom('#main').offsetHeight
+            },
+            index: 0,
+            frames: frames
+        }, function (ret, err) {
+
+        });
+    }
+
+    // 随意切换按钮
+    function randomSwitchBtn( tag ) {
+        if( tag == $api.dom('#footer li.active') )return;
+        var eFootLis = $api.domAll('#footer li'),
+            eHeaderLis = $api.domAll('header li'),
+            index = 0;
+        for (var i = 0,len = eFootLis.length; i < len; i++) {
+            if( tag == eFootLis[i] ){
+                index = i;
+            }else{
+                $api.removeCls(eFootLis[i], 'active');
+                $api.removeCls(eHeaderLis[i], 'active');
+            }
+        }
+        $api.addCls( eFootLis[index], 'active');
+        $api.addCls( eHeaderLis[index], 'active');
+        api.setFrameGroupIndex({
+            name: 'group',
+            index: index
+        });
+    }
+</script>

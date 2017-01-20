@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>OA-没有邮件</title>
+		<link rel="stylesheet" type="text/css" href="../../css/mui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/app_common.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/OA/person-choice.css"/>
+		<style>
+			.mui-disabled img{width: 0.625rem;height: 0.625rem;margin-top: 13px;}
+			.mui-search{border: 0.125rem solid #D5D5D5;border-radius: 0.031rem;}
+			#no-email{width: 100%;height: auto;display: inline-block;text-align: center;vertical-align: middle;font-size: 0.75rem;color: #646464;position: absolute;top: 50%;}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-pull-left mui-disabled" onclick="api.closeWin();"><img src="../../image/spot-sup/back.png" alt="" /></a>
+		    <h1 class="mui-title">废纸篓</h1>
+		    <a id="Email-01.html" onclick="newEmail('Email-01.html');" class="mui-pull-right  mui-disabled"><img src="../../image/17/write.png"/></a>
+		</header>
+		<div class="mui-content">
+		     <div class="mui-indexed-list-search mui-input-row mui-search">
+				<input type="search" class="mui-input-clear mui-indexed-list-search-input" placeholder="搜索">
+			</div>
+			<div id="no-email">
+				没有邮件
+			</div>
+		</div>
+	</body>
+	
+	<script src="../../script/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../script/mui.indexedlist.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../script/common.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		function newEmail(htmlurl){
+			
+			api.openWin({
+	            name: 'new',
+	            url: htmlurl
+	   		});
+		}
+	</script>
+</html>

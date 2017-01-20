@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>OA-我的工资</title>
+		<link rel="stylesheet" type="text/css" href="../../css/mui.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/app_common.css"/>
+		<style>
+			.mui-disabled img{width: 0.625rem;height: 0.625rem;margin-top: 13px;}
+			
+			.mui-table-view{width: 100%;height: auto;padding:0.312rem 1.093rem;margin-top: 0.468rem;background: white;}
+			.mui-table-view-cell.mui-active{background: transparent;}
+			/*.mui-navigate-right:after, .mui-push-right:after{right: 1.093rem;}
+			.mui-table-view-cell > a:not(.mui-btn){padding-left: 1.093rem;padding-right: 1.093rem;}
+			.mui-table-view-cell.mui-collapse .mui-collapse-content{padding-left: 1.093rem;}*/
+			.mui-table-view-cell > a:not(.mui-btn){color: #323232;}
+			.coll-top{width: 100%;height: auto;border-bottom: 0.031rem solid #969696;border-top: 0.031rem solid #969696;font-size: 0.375rem;}
+			.right-num{float: right;}
+			.left-num{font-size: 0.375rem;}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-pull-left mui-disabled" onclick="api.closeWin();"><img src="../../image/spot-sup/back.png" alt="" /></a>
+		    <h1 class="mui-title">我的工资</h1>
+		    <a class="mui-pull-right  mui-disabled" id="text-more"><img src="../../image/22-email/more.png"/></a>
+		</header>
+		<div class="mui-content">
+			<div class="mui-table-view"> 
+		        <li class="mui-table-view-cell mui-collapse">
+		            <a class="mui-navigate-right wage-hd" href="#">2016年09月</a>
+		            <div class="mui-collapse-content">
+		            	<div class="coll-top">
+		            		<label for="">基本工资</label><label for="" class="right-num">5000.00</label><br />
+			               	<label for="">在岗天数</label><label for="" class="right-num">22</label><br />
+			               	<label for="">加班天数</label><label for="" class="right-num">2</label><br />
+			               	<label for="">应发工资</label><label for="" class="right-num">5200.00</label><br />
+			               	<label for="">月奖金</label><label for="" class="right-num">1000.00</label><br />
+			               	<label for="">职位补贴</label><label for="" class="right-num">200.00</label><br />
+			               	<label for="">加班工资</label><label for="" class="right-num">100.00</label><br />
+			               	<label for="">合计</label><label for="" class="right-num">6500.00</label><br />
+			               	<label for="">代扣保险</label><label for="" class="right-num">300.00</label><br />
+			               	<label for="">代扣个税</label><label for="" class="right-num">500.00</label>
+		            	</div>
+		               	<label for="" class="left-num">实发工资</label><label for="" class="right-num" style="font-size: 0.375rem;">5700.00</label>
+		            </div>
+		        </li>
+	   	 	</div>
+		    
+		  	<div class="mui-table-view"> 
+		        <li class="mui-table-view-cell mui-collapse">
+		            <a class="mui-navigate-right wage-hd" href="#">2016年08月</a>
+		            <div class="mui-collapse-content">
+		            	<div class="coll-top">
+		            		<label for="">基本工资</label><label for="" class="right-num">5000.00</label><br />
+			               	<label for="">在岗天数</label><label for="" class="right-num">22</label><br />
+			               	<label for="">加班天数</label><label for="" class="right-num">2</label><br />
+			               	<label for="">应发工资</label><label for="" class="right-num">5200.00</label><br />
+			               	<label for="">月奖金</label><label for="" class="right-num">1000.00</label><br />
+			               	<label for="">职位补贴</label><label for="" class="right-num">200.00</label><br />
+			               	<label for="">加班工资</label><label for="" class="right-num">100.00</label><br />
+			               	<label for="">合计</label><label for="" class="right-num">6500.00</label><br />
+			               	<label for="">代扣保险</label><label for="" class="right-num">300.00</label><br />
+			               	<label for="">代扣个税</label><label for="" class="right-num">500.00</label>
+		            	</div>
+		               	<label for="" class="left-num">实发工资</label><label for="" class="right-num" style="font-size: 0.375rem;">5700.00</label>
+		            </div>
+		        </li>
+	   	 	</div>
+	   	 	
+	   	 	<div class="mui-table-view"> 
+		        <li class="mui-table-view-cell mui-collapse">
+		            <a class="mui-navigate-right wage-hd" href="#">2016年07月</a>
+		            <div class="mui-collapse-content">
+		            	<div class="coll-top">
+		            		<label for="">基本工资</label><label for="" class="right-num">5000.00</label><br />
+			               	<label for="">在岗天数</label><label for="" class="right-num">22</label><br />
+			               	<label for="">加班天数</label><label for="" class="right-num">2</label><br />
+			               	<label for="">应发工资</label><label for="" class="right-num">5200.00</label><br />
+			               	<label for="">月奖金</label><label for="" class="right-num">1000.00</label><br />
+			               	<label for="">职位补贴</label><label for="" class="right-num">200.00</label><br />
+			               	<label for="">加班工资</label><label for="" class="right-num">100.00</label><br />
+			               	<label for="">合计</label><label for="" class="right-num">6500.00</label><br />
+			               	<label for="">代扣保险</label><label for="" class="right-num">300.00</label><br />
+			               	<label for="">代扣个税</label><label for="" class="right-num">500.00</label>
+		            	</div>
+		               	<label for="" class="left-num">实发工资</label><label for="" class="right-num" style="font-size: 0.375rem;">5700.00</label>
+		            </div>
+		        </li>
+	   	 	</div>
+		</div>
+	</body>
+	
+	<script src="../../script/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../script/common.js" type="text/javascript" charset="utf-8"></script>
+</html>

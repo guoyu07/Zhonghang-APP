@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>订单跟踪</title>
+		<link rel="stylesheet" type="text/css" href="../css/mui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/app_common.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/app/order-detail1.css"/>
+		<style>
+			.mui-disabled img{width: 0.625rem;line-height: 0.625rem;margin-top: 13px;}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-pull-left mui-disabled" onclick="api.closeWin();"><img src="../../image/spot-sup/back.png" alt="" /></a>
+		    <h1 class="mui-title">订单跟踪</h1>
+		    <a href="" class="mui-pull-right  mui-disabled" id="text-more"><img src="../image/spot-sup/search.png"/></a>
+		</header>
+		<div class="mui-content">
+		    <div class="order_dt">
+		    	<a href="all-order1.html" class="od_img">
+		    		<div><img src="../image/order-track/payment-none.png"/></div>
+		    		<label for="" class="od_lb">待付款</label>
+		    	</a>
+		    	
+		    	<a href="all-order1.html" class="od_img">
+		    		<div><img src="../image/order-track/delivered-none.png"/></div>
+		    		<div for="" class="od_lb">待发货</div>
+		    	</a>
+		    	
+		    	<a href="all-order1.html" class="od_img">
+		    		<div><img src="../image/order-track/received-none.png"/></div>
+		    		<div for="" class="od_lb">待收货</div>
+		    	</a>
+		    	
+		    	<a href="all-order1.html" class="od_img">
+		    		<div><img src="../image/order-track/payment-ok.png"/></div>
+		    		<div for="" class="od_lb">已付款</div>
+		    	</a>
+		    </div>
+		    
+		    <button class="sub_btn"><a href="all-order1.html">全部订单</a></button>
+		</div>
+	</body>
+	
+	<script src="../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/common.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		mui.init({
+			swipeBack:true
+		});
+	</script>
+</html>

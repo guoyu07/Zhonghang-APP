@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>期货资源</title>
+		<link rel="stylesheet" type="text/css" href="../css/mui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/app_common.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/app/supermarket1.css"/>
+		<style type="text/css">
+			.market_hd_s{
+				width: 3.8rem;
+			}
+			.mui-disabled img{width: 0.625rem;line-height: 0.625rem;margin-top: 11px;}
+			
+			.rec_bd{
+				margin-top: 0.156rem;
+				background: white;
+				width: 11.718rem;height: auto;
+			}
+			.mkt_form{
+				height: 5.156rem;
+			}
+			.huowu_time{
+				 font-size: 12px;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-pull-left mui-disabled" onclick="api.closeWin();"><img src="../../image/spot-sup/back.png" alt="" /></a>
+		    <h1 class="mui-title">期货资源</h1>
+		    <a href="" class="mui-pull-right  mui-disabled" id="text-more"><img src="../image/spot-sup/search.png"/></a>
+		</header>
+		<div class="mui-content">
+		    <div class="market_hd">
+		    	<div class="market_hd_s">
+		    		<div class="mkt_jz">
+		    			<label class="mkt_hd" for="">价格</label>
+			    		<div class="market_hd_j"  id="market_hd_l">
+			    			<div class="mkt_c">
+			    				<img src="../image/spot-sup/sel-up.png"/>
+			    			</div>
+			    			<div class="mkt_c">
+			    				<img src="../image/spot-sup/insel-down.png"/>
+			    			</div>
+			    		</div>
+		    		</div>
+		    	</div>
+		    	<div class="fenge"></div>
+		    	<div class="market_hd_s" class="mkt_r">
+		    		<div class="mkt_jz">
+		    			<label class="mkt_hd">供应量</label>
+			    		<div class="market_hd_j" id="market_hd_r">
+				    		<div class="mkt_c">
+				    			<img src="../image/spot-sup/sel-up.png"/>
+				    		</div>
+				    		<div class="mkt_c">
+				    			<img src="../image/spot-sup/insel-down.png"/>
+				    		</div>
+			    		</div>
+		    		</div>
+		    	</div>
+		    	<div class="fenge"></div>
+		    	<div class="market_hd_s" class="mkt_r">
+		    		<div class="mkt_jz">
+		    			<label class="mkt_hd">交货日期</label>
+			    		<div class="market_hd_j" id="market_hd_r">
+				    		<div class="mkt_c">
+				    			<img src="../image/spot-sup/sel-up.png"/>
+				    		</div>
+				    		<div class="mkt_c">
+				    			<img src="../image/spot-sup/insel-down.png"/>
+				    		</div>
+			    		</div>
+		    		</div>
+		    	</div>
+		    </div>
+		    
+		    <div class="rec_bd">
+		    	<div class="mkt_form">
+		    		<div class="huowu_name">
+		    			<label for="">带钢(磅计)Q195C 2.5*326</label>
+		    		</div>
+		    		<div class="huowu_price">
+		    			<label for="">挂牌价</label><label for="" id="huowu_price">¥19000.00元</label><label for="" class="huowu_y">/吨</label>
+		    		</div>
+		    		<div class="huowu_num">
+		    			<label for="">挂牌量</label><label for="" id="huowu_number">85.25</label><label for="" class="huowu_y">吨</label>
+		    		</div>
+		    		<div class="huowu_time">
+		    			<label for="">交货日期</label><label for="" class="huowu_x">2016年3月4日</label>
+		    		</div>
+		    		<div class="huowu_add">
+		    			<label for="">仓库</label><label for="" class="huowu_x">宁波北仑库</label><label for="" id="jiaohuo_add">交货地</label><label for="" class="huowu_x">宁波</label>
+		    		</div>
+		    		<div class="huowu_gong">
+		    			<label for="">供方</label><label for="" class="huowu_x">北京南北天地科技股份有限公司</label>
+		    		</div>
+		    	</div>
+		    	
+		    	<div class="mkt_form">
+		    		<div class="huowu_name">
+		    			<label for="">带钢(磅计)Q195C 2.5*326</label>
+		    		</div>
+		    		<div class="huowu_price">
+		    			<label for="">挂牌价</label><label for="" id="huowu_price">¥19000.00元</label><label for="" class="huowu_y">/吨</label>
+		    		</div>
+		    		<div class="huowu_num">
+		    			<label for="">挂牌量</label><label for="" id="huowu_number">85.25</label><label for="" class="huowu_y">吨</label>
+		    		</div>
+		    		<div class="huowu_time">
+		    			<label for="">交货日期</label><label for="" class="huowu_x">2016年3月4日</label>
+		    		</div>
+		    		<div class="huowu_add">
+		    			<label for="">仓库</label><label for="" class="huowu_x">宁波北仑库</label><label for="" id="jiaohuo_add">交货地</label><label for="" class="huowu_x">宁波</label>
+		    		</div>
+		    		<div class="huowu_gong">
+		    			<label for="">供方</label><label for="" class="huowu_x">北京南北天地科技股份有限公司</label>
+		    		</div>
+		    	</div>
+		    	
+		    	<div class="mkt_form">
+		    		<div class="huowu_name">
+		    			<label for="">带钢(磅计)Q195C 2.5*326</label>
+		    		</div>
+		    		<div class="huowu_price">
+		    			<label for="">挂牌价</label><label for="" id="huowu_price">¥19000.00元</label><label for="" class="huowu_y">/吨</label>
+		    		</div>
+		    		<div class="huowu_num">
+		    			<label for="">挂牌量</label><label for="" id="huowu_number">85.25</label><label for="" class="huowu_y">吨</label>
+		    		</div>
+		    		<div class="huowu_time">
+		    			<label for="">交货日期</label><label for="" class="huowu_x">2016年3月4日</label>
+		    		</div>
+		    		<div class="huowu_add">
+		    			<label for="">仓库</label><label for="" class="huowu_x">宁波北仑库</label><label for="" id="jiaohuo_add">交货地</label><label for="" class="huowu_x">宁波</label>
+		    		</div>
+		    		<div class="huowu_gong">
+		    			<label for="">供方</label><label for="" class="huowu_x">北京南北天地科技股份有限公司</label>
+		    		</div>
+		    	</div>
+		    	
+		    	<div class="mkt_form">
+		    		<div class="huowu_name">
+		    			<label for="">带钢(磅计)Q195C 2.5*326</label>
+		    		</div>
+		    		<div class="huowu_price">
+		    			<label for="">挂牌价</label><label for="" id="huowu_price">¥19000.00元</label><label for="" class="huowu_y">/吨</label>
+		    		</div>
+		    		<div class="huowu_num">
+		    			<label for="">挂牌量</label><label for="" id="huowu_number">85.25</label><label for="" class="huowu_y">吨</label>
+		    		</div>
+		    		<div class="huowu_time">
+		    			<label for="">交货日期</label><label for="" class="huowu_x">2016年3月4日</label>
+		    		</div>
+		    		<div class="huowu_add">
+		    			<label for="">仓库</label><label for="" class="huowu_x">宁波北仑库</label><label for="" id="jiaohuo_add">交货地</label><label for="" class="huowu_x">宁波</label>
+		    		</div>
+		    		<div class="huowu_gong">
+		    			<label for="">供方</label><label for="" class="huowu_x">北京南北天地科技股份有限公司</label>
+		    		</div>
+		    	</div>
+		    </div>
+		</div>
+	</body>
+	<script src="../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/common.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		mui.init({
+			swipeBack:true
+		});
+	</script>
+</html>
